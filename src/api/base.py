@@ -1,5 +1,5 @@
 from typing import Any, Optional
-from http.client import JSONRPCClient
+from src.http.client import JSONRPCClient
 
 
 class BaseAPI:

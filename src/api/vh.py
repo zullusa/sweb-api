@@ -1,5 +1,5 @@
 from typing import Any, Optional
-from base import BaseAPI
+from .base import BaseAPI
 
 
 class SitesAPI(BaseAPI):

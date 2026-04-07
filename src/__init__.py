@@ -1,16 +1,16 @@
-from .http.client import JSONRPCClient
-from api.domains import DomainsAPI, DomainsBonusAPI, DomainsPersonsAPI, DomainsDNSAPI
-from api.vh import (
+from src.http.client import JSONRPCClient
+from src.api.domains import DomainsAPI, DomainsBonusAPI, DomainsPersonsAPI, DomainsDNSAPI
+from src.api.vh import (
     SitesAPI, HostingAPI, BackupAPI, MailAPI, SSLAPI, TariffAPI,
     LoadAPI, UtilsAPI, CronAPI, DDGAPI, DiskUsageAPI,
 )
-from api.vps import (
+from src.api.vps import (
     VPSAPI, VPSBackupAPI, VPSSSLAPI, VPSIPAPI, VPSProtectedIPAPI,
     VPSDBaaSAPI, VPSBalancerAPI, VPSRemoteBackupAPI, VPSMonitoringAPI,
     VPSMonitoringChecksAPI, VPSMonitoringContactsAPI,
 )
-from api.pay import PayAPI
-from exceptions.exceptions import AuthenticationError
+from src.api.pay import PayAPI
+from src.exceptions.exceptions import AuthenticationError
 
 
 class SwebClient:

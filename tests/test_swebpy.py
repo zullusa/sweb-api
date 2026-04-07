@@ -31,7 +31,7 @@ class TestJSONRPCClient(unittest.TestCase):
         client.set_token("token123")
         self.assertEqual(client.token, "token123")
 
-    @patch("swebpy.http.client.requests.Session.post")
+    @patch("src.http.client.requests.Session.post")
     def test_successful_request(self, mock_post):
         mock_response = Mock()
         mock_response.json.return_value = {"jsonrpc": "2.0", "result": {"status": "ok"}}
@@ -44,7 +44,7 @@ class TestJSONRPCClient(unittest.TestCase):
         self.assertEqual(result, {"status": "ok"})
         mock_post.assert_called_once()
 
-    @patch("swebpy.http.client.requests.Session.post")
+    @patch("src.http.client.requests.Session.post")
     def test_api_error_response(self, mock_post):
         mock_response = Mock()
         mock_response.json.return_value = {
@@ -58,7 +58,7 @@ class TestJSONRPCClient(unittest.TestCase):
         with self.assertRaises(AuthenticationError):
             client.call("testMethod")
 
-    @patch("swebpy.http.client.requests.Session.post")
+    @patch("src.http.client.requests.Session.post")
     def test_network_error_connection(self, mock_post):
         import requests
         mock_post.side_effect = requests.exceptions.ConnectionError("Connection failed")
@@ -67,7 +67,7 @@ class TestJSONRPCClient(unittest.TestCase):
         with self.assertRaises(NetworkError):
             client.call("testMethod")
 
-    @patch("swebpy.http.client.requests.Session.post")
+    @patch("src.http.client.requests.Session.post")
     def test_network_error_timeout(self, mock_post):
         import requests
         mock_post.side_effect = requests.exceptions.Timeout("Request timeout")
@@ -76,7 +76,7 @@ class TestJSONRPCClient(unittest.TestCase):
         with self.assertRaises(NetworkError):
             client.call("testMethod")
 
-    @patch("swebpy.http.client.requests.Session.post")
+    @patch("src.http.client.requests.Session.post")
     def test_invalid_json_response(self, mock_post):
         mock_response = Mock()
         mock_response.json.side_effect = ValueError("Invalid JSON")
@@ -87,7 +87,7 @@ class TestJSONRPCClient(unittest.TestCase):
         with self.assertRaises(InvalidResponseError):
             client.call("testMethod")
 
-    @patch("swebpy.http.client.requests.Session.post")
+    @patch("src.http.client.requests.Session.post")
     def test_custom_api_error(self, mock_post):
         mock_response = Mock()
         mock_response.json.return_value = {
@@ -146,7 +146,7 @@ class TestBaseAPI(unittest.TestCase):
 
 class TestSwebClientAuthentication(unittest.TestCase):
     @unittest.skip("Requires real API endpoint")
-    @patch("swebpy.http.client.requests.Session.post")
+    @patch("src.http.client.requests.Session.post")
     def test_authentication_success(self, mock_post):
         auth_response = Mock()
         auth_response.json.return_value = {"jsonrpc": "2.0", "result": "test_token_12345"}
@@ -159,7 +159,7 @@ class TestSwebClientAuthentication(unittest.TestCase):
         self.assertEqual(client._token, "test_token_12345")
 
     @unittest.skip("Requires real API endpoint")
-    @patch("swebpy.http.client.requests.Session.post")
+    @patch("src.http.client.requests.Session.post")
     def test_authentication_invalid_token(self, mock_post):
         auth_response = Mock()
         auth_response.json.return_value = {"jsonrpc": "2.0", "result": None}
@@ -171,7 +171,7 @@ class TestSwebClientAuthentication(unittest.TestCase):
             SwebClient("testuser", "testpass")
 
     @unittest.skip("Requires real API endpoint")
-    @patch("swebpy.http.client.requests.Session.post")
+    @patch("src.http.client.requests.Session.post")
     def test_authentication_connection_error(self, mock_post):
         import requests
         mock_post.side_effect = requests.exceptions.ConnectionError("Connection failed")
@@ -179,7 +179,7 @@ class TestSwebClientAuthentication(unittest.TestCase):
         with self.assertRaises(AuthenticationError):
             SwebClient("testuser", "testpass")
 
-    @patch("swebpy.http.client.JSONRPCClient")
+    @patch("src.http.client.JSONRPCClient")
     def test_authentication_connection_error(self, mock_jsonrpc_client):
         mock_client = Mock()
         mock_client.call.side_effect = NetworkError("Connection failed")
@@ -444,7 +444,7 @@ class TestPayAPI(unittest.TestCase):
 
 
 class TestSwebClientProperties(unittest.TestCase):
-    @patch("swebpy.http.client.JSONRPCClient")
+    @patch("src.http.client.JSONRPCClient")
     def test_all_api_properties_return_correct_types(self, mock_jsonrpc_client):
         mock_client = Mock()
         mock_client.call.return_value = "token"

@@ -1,5 +1,5 @@
 from typing import Any
-from base import BaseAPI
+from .base import BaseAPI
 
 
 class PayAPI(BaseAPI):
