@@ -43,10 +43,10 @@ class SwebClient:
         self._client.set_token(self._token)
 
     def _authenticate(self) -> Any:
-        client = JSONRPCClient(f"{self.BASE_URL}/notAuthorized")
+        client = JSONRPCClient(self.BASE_URL)
         try:
             params = {"login": self._login, "password": self._password}
-            result = client.call("getToken", params)  # type: ignore[arg-type]
+            result = client.call("notAuthorized", "getToken", params)  # type: ignore[arg-type]
             if not result or not isinstance(result, str):
                 raise AuthenticationError("Invalid token received")
             return result
