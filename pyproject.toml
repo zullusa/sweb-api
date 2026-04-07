@@ -45,7 +45,7 @@ Repository = "https://github.com/zullusa/sweb-api"
 
 [tool.setuptools.packages.find]
 where = ["."]
-include = ["sweb-api*"]
+include = ["sweb_api*"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

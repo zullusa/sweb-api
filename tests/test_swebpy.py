@@ -1,15 +1,15 @@
 import unittest
 from unittest.mock import Mock, patch
 
-from src.http.client import JSONRPCClient
-from src.exceptions.exceptions import (
+from sweb_api.http.client import JSONRPCClient
+from sweb_api.exceptions.exceptions import (
     SwebAPIError,
     AuthenticationError,
     InvalidResponseError,
     NetworkError,
 )
-from src.api.base import BaseAPI
-from src import SwebClient
+from sweb_api.api.base import BaseAPI
+from sweb_api import SwebClient
 
 
 class TestJSONRPCClient(unittest.TestCase):
@@ -31,7 +31,7 @@ class TestJSONRPCClient(unittest.TestCase):
         client.set_token("token123")
         self.assertEqual(client.token, "token123")
 
-    @patch("src.http.client.requests.Session.post")
+    @patch("sweb_api.http.client.requests.Session.post")
     def test_successful_request(self, mock_post):
         mock_response = Mock()
         mock_response.json.return_value = {"jsonrpc": "2.0", "result": {"status": "ok"}}
@@ -44,7 +44,7 @@ class TestJSONRPCClient(unittest.TestCase):
         self.assertEqual(result, {"status": "ok"})
         mock_post.assert_called_once()
 
-    @patch("src.http.client.requests.Session.post")
+    @patch("sweb_api.http.client.requests.Session.post")
     def test_api_error_response(self, mock_post):
         mock_response = Mock()
         mock_response.json.return_value = {
@@ -58,7 +58,7 @@ class TestJSONRPCClient(unittest.TestCase):
         with self.assertRaises(AuthenticationError):
             client.call("testMethod")
 
-    @patch("src.http.client.requests.Session.post")
+    @patch("sweb_api.http.client.requests.Session.post")
     def test_network_error_connection(self, mock_post):
         import requests
         mock_post.side_effect = requests.exceptions.ConnectionError("Connection failed")
@@ -67,7 +67,7 @@ class TestJSONRPCClient(unittest.TestCase):
         with self.assertRaises(NetworkError):
             client.call("testMethod")
 
-    @patch("src.http.client.requests.Session.post")
+    @patch("sweb_api.http.client.requests.Session.post")
     def test_network_error_timeout(self, mock_post):
         import requests
         mock_post.side_effect = requests.exceptions.Timeout("Request timeout")
@@ -76,7 +76,7 @@ class TestJSONRPCClient(unittest.TestCase):
         with self.assertRaises(NetworkError):
             client.call("testMethod")
 
-    @patch("src.http.client.requests.Session.post")
+    @patch("sweb_api.http.client.requests.Session.post")
     def test_invalid_json_response(self, mock_post):
         mock_response = Mock()
         mock_response.json.side_effect = ValueError("Invalid JSON")
@@ -87,7 +87,7 @@ class TestJSONRPCClient(unittest.TestCase):
         with self.assertRaises(InvalidResponseError):
             client.call("testMethod")
 
-    @patch("src.http.client.requests.Session.post")
+    @patch("sweb_api.http.client.requests.Session.post")
     def test_custom_api_error(self, mock_post):
         mock_response = Mock()
         mock_response.json.return_value = {
@@ -146,7 +146,7 @@ class TestBaseAPI(unittest.TestCase):
 
 class TestSwebClientAuthentication(unittest.TestCase):
     @unittest.skip("Requires real API endpoint")
-    @patch("src.http.client.requests.Session.post")
+    @patch("sweb_api.http.client.requests.Session.post")
     def test_authentication_success(self, mock_post):
         auth_response = Mock()
         auth_response.json.return_value = {"jsonrpc": "2.0", "result": "test_token_12345"}
@@ -159,7 +159,7 @@ class TestSwebClientAuthentication(unittest.TestCase):
         self.assertEqual(client._token, "test_token_12345")
 
     @unittest.skip("Requires real API endpoint")
-    @patch("src.http.client.requests.Session.post")
+    @patch("sweb_api.http.client.requests.Session.post")
     def test_authentication_invalid_token(self, mock_post):
         auth_response = Mock()
         auth_response.json.return_value = {"jsonrpc": "2.0", "result": None}
@@ -171,7 +171,7 @@ class TestSwebClientAuthentication(unittest.TestCase):
             SwebClient("testuser", "testpass")
 
     @unittest.skip("Requires real API endpoint")
-    @patch("src.http.client.requests.Session.post")
+    @patch("sweb_api.http.client.requests.Session.post")
     def test_authentication_connection_error(self, mock_post):
         import requests
         mock_post.side_effect = requests.exceptions.ConnectionError("Connection failed")
@@ -179,7 +179,7 @@ class TestSwebClientAuthentication(unittest.TestCase):
         with self.assertRaises(AuthenticationError):
             SwebClient("testuser", "testpass")
 
-    @patch("src.http.client.JSONRPCClient")
+    @patch("sweb_api.http.client.JSONRPCClient")
     def test_authentication_connection_error(self, mock_jsonrpc_client):
         mock_client = Mock()
         mock_client.call.side_effect = NetworkError("Connection failed")
@@ -193,7 +193,7 @@ class TestDomainsAPI(unittest.TestCase):
     def setUp(self):
         self.mock_client = Mock()
         self.api = self.mock_client
-        from src.api.domains import DomainsAPI
+        from sweb_api.api.domains import DomainsAPI
         self.domains = DomainsAPI(self.mock_client, "domains")
 
     def test_get_subdomains(self):
@@ -285,7 +285,7 @@ class TestDomainsAPI(unittest.TestCase):
 class TestDomainsAPIEdgeCases(unittest.TestCase):
     def setUp(self):
         self.mock_client = Mock()
-        from src.api.domains import DomainsAPI
+        from sweb_api.api.domains import DomainsAPI
         self.domains = DomainsAPI(self.mock_client, "domains")
 
     def test_empty_domain_param(self):
@@ -319,7 +319,7 @@ class TestDomainsAPIEdgeCases(unittest.TestCase):
 class TestMailAPI(unittest.TestCase):
     def setUp(self):
         self.mock_client = Mock()
-        from src.api.vh import MailAPI
+        from sweb_api.api.vh import MailAPI
         self.mail = MailAPI(self.mock_client, "vh/mail")
 
     def test_create_mbox(self):
@@ -372,7 +372,7 @@ class TestMailAPI(unittest.TestCase):
 class TestVPSAPI(unittest.TestCase):
     def setUp(self):
         self.mock_client = Mock()
-        from src.api.vps import VPSAPI
+        from sweb_api.api.vps import VPSAPI
         self.vps = VPSAPI(self.mock_client, "vps")
 
     def test_power_on(self):
@@ -419,7 +419,7 @@ class TestVPSAPI(unittest.TestCase):
 class TestPayAPI(unittest.TestCase):
     def setUp(self):
         self.mock_client = Mock()
-        from src.api.pay import PayAPI
+        from sweb_api.api.pay import PayAPI
         self.pay = PayAPI(self.mock_client, "pay")
 
     def test_get_balance(self):
@@ -444,7 +444,7 @@ class TestPayAPI(unittest.TestCase):
 
 
 class TestSwebClientProperties(unittest.TestCase):
-    @patch("src.http.client.JSONRPCClient")
+    @patch("sweb_api.http.client.JSONRPCClient")
     def test_all_api_properties_return_correct_types(self, mock_jsonrpc_client):
         mock_client = Mock()
         mock_client.call.return_value = "token"
@@ -476,7 +476,7 @@ class TestSwebClientProperties(unittest.TestCase):
 class TestEdgeCases(unittest.TestCase):
     def test_special_characters_in_params(self):
         mock_client = Mock()
-        from src.api.domains import DomainsAPI
+        from sweb_api.api.domains import DomainsAPI
         domains = DomainsAPI(mock_client, "domains")
 
         mock_client.call.return_value = 1
@@ -487,7 +487,7 @@ class TestEdgeCases(unittest.TestCase):
 
     def test_unicode_domain_names(self):
         mock_client = Mock()
-        from src.api.domains import DomainsAPI
+        from sweb_api.api.domains import DomainsAPI
         domains = DomainsAPI(mock_client, "domains")
 
         mock_client.call.return_value = [{"value": "*.xn--p1ai.xn--p1ai", "name": "*.тест.рф"}]
@@ -496,7 +496,7 @@ class TestEdgeCases(unittest.TestCase):
 
     def test_empty_optional_params(self):
         mock_client = Mock()
-        from src.api.vh import UtilsAPI
+        from sweb_api.api.vh import UtilsAPI
         utils = UtilsAPI(mock_client, "vh/utils")
 
         mock_client.call.return_value = 1
@@ -507,7 +507,7 @@ class TestEdgeCases(unittest.TestCase):
 class TestDiskUsageAPI(unittest.TestCase):
     def setUp(self):
         self.mock_client = Mock()
-        from src.api.vh import DiskUsageAPI
+        from sweb_api.api.vh import DiskUsageAPI
         self.disk = DiskUsageAPI(self.mock_client, "vh/utils/diskUsage")
 
     def test_get_tasks_info(self):
