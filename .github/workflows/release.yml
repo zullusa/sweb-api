@@ -48,7 +48,6 @@ jobs:
   build:
     needs: [test, lint]
     runs-on: ubuntu-latest
-    if: startsWith(github.ref, 'refs/tags/')
     steps:
       - uses: actions/checkout@v4
       - name: Set up Python
