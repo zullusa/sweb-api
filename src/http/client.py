@@ -3,7 +3,7 @@ import requests
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
 
-from swebpy.exceptions import SwebAPIError, AuthenticationError, InvalidResponseError, NetworkError
+from exceptions.exceptions import SwebAPIError, AuthenticationError, InvalidResponseError, NetworkError
 
 
 class JSONRPCClient:

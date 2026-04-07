@@ -1,5 +1,5 @@
 from typing import Any, Optional
-from swebpy.http.client import JSONRPCClient
+from http.client import JSONRPCClient
 
 
 class BaseAPI:

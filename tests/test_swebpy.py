@@ -1,16 +1,15 @@
 import unittest
-from unittest.mock import Mock, patch, MagicMock
-import json
+from unittest.mock import Mock, patch
 
-from swebpy.http.client import JSONRPCClient
-from swebpy.exceptions import (
+from src.http.client import JSONRPCClient
+from src.exceptions.exceptions import (
     SwebAPIError,
     AuthenticationError,
     InvalidResponseError,
     NetworkError,
 )
-from swebpy.api.base import BaseAPI
-from swebpy import SwebClient
+from src.api.base import BaseAPI
+from src import SwebClient
 
 
 class TestJSONRPCClient(unittest.TestCase):
@@ -194,7 +193,7 @@ class TestDomainsAPI(unittest.TestCase):
     def setUp(self):
         self.mock_client = Mock()
         self.api = self.mock_client
-        from swebpy.api.domains import DomainsAPI
+        from src.api.domains import DomainsAPI
         self.domains = DomainsAPI(self.mock_client, "domains")
 
     def test_get_subdomains(self):
@@ -286,7 +285,7 @@ class TestDomainsAPI(unittest.TestCase):
 class TestDomainsAPIEdgeCases(unittest.TestCase):
     def setUp(self):
         self.mock_client = Mock()
-        from swebpy.api.domains import DomainsAPI
+        from src.api.domains import DomainsAPI
         self.domains = DomainsAPI(self.mock_client, "domains")
 
     def test_empty_domain_param(self):
@@ -320,7 +319,7 @@ class TestDomainsAPIEdgeCases(unittest.TestCase):
 class TestMailAPI(unittest.TestCase):
     def setUp(self):
         self.mock_client = Mock()
-        from swebpy.api.vh import MailAPI
+        from src.api.vh import MailAPI
         self.mail = MailAPI(self.mock_client, "vh/mail")
 
     def test_create_mbox(self):
@@ -373,7 +372,7 @@ class TestMailAPI(unittest.TestCase):
 class TestVPSAPI(unittest.TestCase):
     def setUp(self):
         self.mock_client = Mock()
-        from swebpy.api.vps import VPSAPI
+        from src.api.vps import VPSAPI
         self.vps = VPSAPI(self.mock_client, "vps")
 
     def test_power_on(self):
@@ -420,7 +419,7 @@ class TestVPSAPI(unittest.TestCase):
 class TestPayAPI(unittest.TestCase):
     def setUp(self):
         self.mock_client = Mock()
-        from swebpy.api.pay import PayAPI
+        from src.api.pay import PayAPI
         self.pay = PayAPI(self.mock_client, "pay")
 
     def test_get_balance(self):
@@ -477,7 +476,7 @@ class TestSwebClientProperties(unittest.TestCase):
 class TestEdgeCases(unittest.TestCase):
     def test_special_characters_in_params(self):
         mock_client = Mock()
-        from swebpy.api.domains import DomainsAPI
+        from src.api.domains import DomainsAPI
         domains = DomainsAPI(mock_client, "domains")
 
         mock_client.call.return_value = 1
@@ -488,7 +487,7 @@ class TestEdgeCases(unittest.TestCase):
 
     def test_unicode_domain_names(self):
         mock_client = Mock()
-        from swebpy.api.domains import DomainsAPI
+        from src.api.domains import DomainsAPI
         domains = DomainsAPI(mock_client, "domains")
 
         mock_client.call.return_value = [{"value": "*.xn--p1ai.xn--p1ai", "name": "*.тест.рф"}]
@@ -497,7 +496,7 @@ class TestEdgeCases(unittest.TestCase):
 
     def test_empty_optional_params(self):
         mock_client = Mock()
-        from swebpy.api.vh import UtilsAPI
+        from src.api.vh import UtilsAPI
         utils = UtilsAPI(mock_client, "vh/utils")
 
         mock_client.call.return_value = 1
@@ -508,7 +507,7 @@ class TestEdgeCases(unittest.TestCase):
 class TestDiskUsageAPI(unittest.TestCase):
     def setUp(self):
         self.mock_client = Mock()
-        from swebpy.api.vh import DiskUsageAPI
+        from src.api.vh import DiskUsageAPI
         self.disk = DiskUsageAPI(self.mock_client, "vh/utils/diskUsage")
 
     def test_get_tasks_info(self):

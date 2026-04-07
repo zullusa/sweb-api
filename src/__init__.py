@@ -1,16 +1,16 @@
-from swebpy.http.client import JSONRPCClient
-from swebpy.api.domains import DomainsAPI, DomainsBonusAPI, DomainsPersonsAPI, DomainsDNSAPI
-from swebpy.api.vh import (
+from .http.client import JSONRPCClient
+from api.domains import DomainsAPI, DomainsBonusAPI, DomainsPersonsAPI, DomainsDNSAPI
+from api.vh import (
     SitesAPI, HostingAPI, BackupAPI, MailAPI, SSLAPI, TariffAPI,
     LoadAPI, UtilsAPI, CronAPI, DDGAPI, DiskUsageAPI,
 )
-from swebpy.api.vps import (
+from api.vps import (
     VPSAPI, VPSBackupAPI, VPSSSLAPI, VPSIPAPI, VPSProtectedIPAPI,
     VPSDBaaSAPI, VPSBalancerAPI, VPSRemoteBackupAPI, VPSMonitoringAPI,
     VPSMonitoringChecksAPI, VPSMonitoringContactsAPI,
 )
-from swebpy.api.pay import PayAPI
-from swebpy.exceptions import AuthenticationError
+from api.pay import PayAPI
+from exceptions.exceptions import AuthenticationError
 
 
 class SwebClient:
