@@ -535,7 +535,7 @@ class TestDiskUsageAPI(unittest.TestCase):
 
     def test_change_email(self):
         self.mock_client.call.return_value = 1
-        result = self.disk.change_email("new@example.com")
+        self.disk.change_email("new@example.com")
         self.mock_client.call.assert_called_once_with(
             "vh/utils/diskUsage", "changeEmail", {"email": "new@example.com"}
         )
