@@ -8,8 +8,7 @@ class BaseAPI:
         self._endpoint = endpoint
 
     def _call(self, method: str, params: Optional[dict] = None) -> Any:
-        full_method = f"{self._endpoint}/{method}" if self._endpoint else method
-        return self._client.call(full_method, params)
+        return self._client.call(self._endpoint, method, params)
 
     def index(self, params: Optional[dict] = None) -> Any:
         return self._call("index", params)

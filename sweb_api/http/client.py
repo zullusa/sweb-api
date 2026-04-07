@@ -36,6 +36,7 @@ class JSONRPCClient:
 
     def _make_request(
         self,
+        endpoint: str,
         method: str,
         params: Optional[dict] = None,
         request_id: Optional[str] = None,
@@ -50,7 +51,7 @@ class JSONRPCClient:
 
         try:
             response = self.session.post(
-                self.base_url,
+                f"{self.base_url}/{endpoint}",
                 json=payload,
                 headers=self._build_headers(),
                 timeout=self.timeout,
@@ -78,5 +79,5 @@ class JSONRPCClient:
 
         return data.get("result")
 
-    def call(self, method: str, params: Optional[dict] = None) -> Any:
-        return self._make_request(method, params)
+    def call(self, endpoint: str, method: str, params: Optional[dict] = None) -> Any:
+        return self._make_request(endpoint, method, params)
