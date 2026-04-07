@@ -128,7 +128,9 @@ class HostingAPI(BaseAPI):
         return self._call("databasePgsqlChangePass", {"dbName": db_name, "dbPassword": db_password})
 
     def edit_comment(self, db_type: str, db_name: str, db_comment: str) -> int:
-        return self._call("databaseEditComment", {"dbType": db_type, "dbName": db_name, "dbComment": db_comment})
+        return self._call(
+            "databaseEditComment", {"dbType": db_type, "dbName": db_name, "dbComment": db_comment}
+        )
 
     def get_pma_user(self, db_name: str) -> Any:
         return self._call("getPmaUser", {"dbName": db_name})
@@ -171,12 +173,15 @@ class MailAPI(BaseAPI):
         order_by: int = 0,
         order_direct: str = "asc",
     ) -> Any:
-        return self._call("getDomainsList", {
-            "page": page,
-            "limit": limit,
-            "orderBy": order_by,
-            "orderDirect": order_direct,
-        })
+        return self._call(
+            "getDomainsList",
+            {
+                "page": page,
+                "limit": limit,
+                "orderBy": order_by,
+                "orderDirect": order_direct,
+            },
+        )
 
     def get_mailboxes_list(
         self,
@@ -214,7 +219,9 @@ class MailAPI(BaseAPI):
         return self._call("createMbox", params)
 
     def send_requisites_to_email(self, email: str, login: str, password: str) -> int:
-        return self._call("sendRequisitesToEmail", {"email": email, "login": login, "password": password})
+        return self._call(
+            "sendRequisitesToEmail", {"email": email, "login": login, "password": password}
+        )
 
     def drop_mbox(self, domain: str, mbox: str) -> int:
         return self._call("dropMbox", {"domain": domain, "mbox": mbox})
@@ -250,10 +257,17 @@ class MailAPI(BaseAPI):
         return self._call("isEnabledDeletingAfterForwarding", {"domain": domain, "mbox": mbox})
 
     def change_deleting_after_forwarding(self, domain: str, mbox: str, turn_on: bool) -> int:
-        return self._call("changeDeletingAfterForwarding", {"domain": domain, "mbox": mbox, "turnOn": turn_on})
+        return self._call(
+            "changeDeletingAfterForwarding", {"domain": domain, "mbox": mbox, "turnOn": turn_on}
+        )
 
-    def get_delivery_addresses_list(self, domain: str, mbox: str, page: int = 1, limit: int = 20) -> Any:
-        return self._call("getDeliveryAddressesList", {"domain": domain, "mbox": mbox, "page": page, "limit": limit})
+    def get_delivery_addresses_list(
+        self, domain: str, mbox: str, page: int = 1, limit: int = 20
+    ) -> Any:
+        return self._call(
+            "getDeliveryAddressesList",
+            {"domain": domain, "mbox": mbox, "page": page, "limit": limit},
+        )
 
     def get_delivery_info(self, domain: str, mbox: str) -> Any:
         return self._call("getDeliveryInfo", {"domain": domain, "mbox": mbox})
@@ -286,19 +300,29 @@ class MailAPI(BaseAPI):
         return self._call("deleteMails", {"domain": domain, "mbox": mbox, "days": days})
 
     def change_mailbox_password(self, domain: str, mbox: str, password: str) -> int:
-        return self._call("changeMailboxPassword", {"domain": domain, "mbox": mbox, "password": password})
+        return self._call(
+            "changeMailboxPassword", {"domain": domain, "mbox": mbox, "password": password}
+        )
 
     def get_whitelist(self, domain: str, mbox: str, page: int = 1, limit: int = 20) -> Any:
-        return self._call("getWhitelist", {"domain": domain, "mbox": mbox, "page": page, "limit": limit})
+        return self._call(
+            "getWhitelist", {"domain": domain, "mbox": mbox, "page": page, "limit": limit}
+        )
 
     def get_blacklist(self, domain: str, mbox: str, page: int = 1, limit: int = 20) -> Any:
-        return self._call("getBlacklist", {"domain": domain, "mbox": mbox, "page": page, "limit": limit})
+        return self._call(
+            "getBlacklist", {"domain": domain, "mbox": mbox, "page": page, "limit": limit}
+        )
 
     def add_to_whitelist(self, domain: str, mbox: str, address: str, all: bool = False) -> int:
-        return self._call("addToWhitelist", {"domain": domain, "mbox": mbox, "address": address, "all": all})
+        return self._call(
+            "addToWhitelist", {"domain": domain, "mbox": mbox, "address": address, "all": all}
+        )
 
     def add_to_blacklist(self, domain: str, mbox: str, email: str, all: bool = False) -> int:
-        return self._call("addToBlacklist", {"domain": domain, "mbox": mbox, "email": email, "all": all})
+        return self._call(
+            "addToBlacklist", {"domain": domain, "mbox": mbox, "email": email, "all": all}
+        )
 
     def drop_from_whitelist(self, domain: str, mbox: str, address: str) -> int:
         return self._call("dropFromWhitelist", {"domain": domain, "mbox": mbox, "address": address})
@@ -330,7 +354,10 @@ class SSLAPI(BaseAPI):
         return self._call("getProlongInfo", {"id": certificate_id})
 
     def prolong_certificate(self, current_certificate_id: int, certificate_prolong_id: int) -> int:
-        return self._call("prolongCertificate", {"id": current_certificate_id, "certificateProlongId": certificate_prolong_id})
+        return self._call(
+            "prolongCertificate",
+            {"id": current_certificate_id, "certificateProlongId": certificate_prolong_id},
+        )
 
     def install_lets_encrypt(
         self,
@@ -374,14 +401,17 @@ class CronAPI(BaseAPI):
         weekday: int,
         command: str,
     ) -> int:
-        return self._call("addTask", {
-            "minute": minute,
-            "hour": hour,
-            "day": day,
-            "month": month,
-            "weekday": weekday,
-            "command": command,
-        })
+        return self._call(
+            "addTask",
+            {
+                "minute": minute,
+                "hour": hour,
+                "day": day,
+                "month": month,
+                "weekday": weekday,
+                "command": command,
+            },
+        )
 
     def edit_task(
         self,
@@ -393,15 +423,18 @@ class CronAPI(BaseAPI):
         weekday: int,
         command: str,
     ) -> int:
-        return self._call("editTask", {
-            "oldTask": old_task,
-            "minute": minute,
-            "hour": hour,
-            "day": day,
-            "month": month,
-            "weekday": weekday,
-            "command": command,
-        })
+        return self._call(
+            "editTask",
+            {
+                "oldTask": old_task,
+                "minute": minute,
+                "hour": hour,
+                "day": day,
+                "month": month,
+                "weekday": weekday,
+                "command": command,
+            },
+        )
 
     def remove_task(self, task: str) -> int:
         return self._call("removeTask", {"task": task})

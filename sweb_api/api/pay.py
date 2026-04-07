@@ -7,7 +7,9 @@ class PayAPI(BaseAPI):
         return self._call("isAutopaymentEnable")
 
     def get_pay_recommendations(self, add_balance_recommendations: bool = False) -> Any:
-        return self._call("getPayRecommendations", {"addBalanceRecommendations": add_balance_recommendations})
+        return self._call(
+            "getPayRecommendations", {"addBalanceRecommendations": add_balance_recommendations}
+        )
 
     def get_recommendation_total_cost(self) -> int:
         return self._call("getRecommendationTotalCost")

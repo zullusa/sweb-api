@@ -49,7 +49,7 @@ class TestJSONRPCClient(unittest.TestCase):
         mock_response = Mock()
         mock_response.json.return_value = {
             "jsonrpc": "2.0",
-            "error": {"code": -32601, "message": "Object not found"}
+            "error": {"code": -32601, "message": "Object not found"},
         }
         mock_response.raise_for_status = Mock()
         mock_post.return_value = mock_response
@@ -61,6 +61,7 @@ class TestJSONRPCClient(unittest.TestCase):
     @patch("sweb_api.http.client.requests.Session.post")
     def test_network_error_connection(self, mock_post):
         import requests
+
         mock_post.side_effect = requests.exceptions.ConnectionError("Connection failed")
 
         client = JSONRPCClient("https://api.sweb.ru")
@@ -70,6 +71,7 @@ class TestJSONRPCClient(unittest.TestCase):
     @patch("sweb_api.http.client.requests.Session.post")
     def test_network_error_timeout(self, mock_post):
         import requests
+
         mock_post.side_effect = requests.exceptions.Timeout("Request timeout")
 
         client = JSONRPCClient("https://api.sweb.ru")
@@ -92,7 +94,7 @@ class TestJSONRPCClient(unittest.TestCase):
         mock_response = Mock()
         mock_response.json.return_value = {
             "jsonrpc": "2.0",
-            "error": {"code": -32001, "message": "Custom error"}
+            "error": {"code": -32001, "message": "Custom error"},
         }
         mock_response.raise_for_status = Mock()
         mock_post.return_value = mock_response
@@ -131,7 +133,9 @@ class TestBaseAPI(unittest.TestCase):
         api = BaseAPI(mock_client, "domains")
         result = api._call("getSubdomains", {"domain": "example.com"})
 
-        mock_client.call.assert_called_once_with("domains", "getSubdomains", {"domain": "example.com"})
+        mock_client.call.assert_called_once_with(
+            "domains", "getSubdomains", {"domain": "example.com"}
+        )
         self.assertEqual(result, {"data": "test"})
 
     def test_index_call(self):
@@ -151,7 +155,7 @@ class TestSwebClientAuthentication(unittest.TestCase):
         auth_response = Mock()
         auth_response.json.return_value = {"jsonrpc": "2.0", "result": "test_token_12345"}
         auth_response.raise_for_status = Mock()
-        
+
         mock_post.return_value = auth_response
 
         client = SwebClient("testuser", "testpass")
@@ -164,7 +168,7 @@ class TestSwebClientAuthentication(unittest.TestCase):
         auth_response = Mock()
         auth_response.json.return_value = {"jsonrpc": "2.0", "result": None}
         auth_response.raise_for_status = Mock()
-        
+
         mock_post.return_value = auth_response
 
         with self.assertRaises(AuthenticationError):
@@ -174,6 +178,7 @@ class TestSwebClientAuthentication(unittest.TestCase):
     @patch("sweb_api.http.client.requests.Session.post")
     def test_authentication_connection_error(self, mock_post):
         import requests
+
         mock_post.side_effect = requests.exceptions.ConnectionError("Connection failed")
 
         with self.assertRaises(AuthenticationError):
@@ -194,6 +199,7 @@ class TestDomainsAPI(unittest.TestCase):
         self.mock_client = Mock()
         self.api = self.mock_client
         from sweb_api.api.domains import DomainsAPI
+
         self.domains = DomainsAPI(self.mock_client, "domains")
 
     def test_get_subdomains(self):
@@ -249,9 +255,7 @@ class TestDomainsAPI(unittest.TestCase):
     def test_move_with_minimal_params(self):
         self.mock_client.call.return_value = 1
         result = self.domains.move("example.com")
-        self.mock_client.call.assert_called_once_with(
-            "domains", "move", {"domain": "example.com"}
-        )
+        self.mock_client.call.assert_called_once_with("domains", "move", {"domain": "example.com"})
 
     def test_move_with_optional_params(self):
         self.mock_client.call.return_value = 1
@@ -279,7 +283,9 @@ class TestDomainsAPI(unittest.TestCase):
         self.mock_client.call.return_value = 1
         result = self.domains.create_subdomain("example.com", "test", "/testdir")
         self.mock_client.call.assert_called_once_with(
-            "domains", "createSubdomain", {"domain": "example.com", "machine": "test", "dir": "/testdir"}
+            "domains",
+            "createSubdomain",
+            {"domain": "example.com", "machine": "test", "dir": "/testdir"},
         )
 
 
@@ -287,6 +293,7 @@ class TestDomainsAPIEdgeCases(unittest.TestCase):
     def setUp(self):
         self.mock_client = Mock()
         from sweb_api.api.domains import DomainsAPI
+
         self.domains = DomainsAPI(self.mock_client, "domains")
 
     def test_empty_domain_param(self):
@@ -301,11 +308,7 @@ class TestDomainsAPIEdgeCases(unittest.TestCase):
 
     def test_extended_result_handling(self):
         self.mock_client.call.return_value = {
-            "extendedResult": {
-                "code": 1,
-                "message": "Task created",
-                "data": []
-            }
+            "extendedResult": {"code": 1, "message": "Task created", "data": []}
         }
         result = self.domains.move("example.com")
         self.assertIn("extendedResult", result)
@@ -321,13 +324,14 @@ class TestMailAPI(unittest.TestCase):
     def setUp(self):
         self.mock_client = Mock()
         from sweb_api.api.vh import MailAPI
+
         self.mail = MailAPI(self.mock_client, "vh/mail")
 
     def test_create_mbox(self):
         self.mock_client.call.return_value = {
             "login": "test@example.com",
             "password": "password123",
-            "webMail": "https://webmail.sweb.ru"
+            "webMail": "https://webmail.sweb.ru",
         }
         result = self.mail.create_mbox("example.com", "test", "password123")
         call_args = self.mock_client.call.call_args[0][2]
@@ -374,14 +378,13 @@ class TestVPSAPI(unittest.TestCase):
     def setUp(self):
         self.mock_client = Mock()
         from sweb_api.api.vps import VPSAPI
+
         self.vps = VPSAPI(self.mock_client, "vps")
 
     def test_power_on(self):
         self.mock_client.call.return_value = 1
         result = self.vps.power_on("test_vps_1")
-        self.mock_client.call.assert_called_once_with(
-            "vps", "powerOn", {"billingId": "test_vps_1"}
-        )
+        self.mock_client.call.assert_called_once_with("vps", "powerOn", {"billingId": "test_vps_1"})
 
     def test_power_off(self):
         self.mock_client.call.return_value = 1
@@ -393,9 +396,7 @@ class TestVPSAPI(unittest.TestCase):
     def test_reboot(self):
         self.mock_client.call.return_value = 1
         result = self.vps.reboot("test_vps_1")
-        self.mock_client.call.assert_called_once_with(
-            "vps", "reboot", {"billingId": "test_vps_1"}
-        )
+        self.mock_client.call.assert_called_once_with("vps", "reboot", {"billingId": "test_vps_1"})
 
     def test_is_running(self):
         self.mock_client.call.return_value = 1
@@ -405,9 +406,7 @@ class TestVPSAPI(unittest.TestCase):
     def test_remove(self):
         self.mock_client.call.return_value = 1
         result = self.vps.remove("test_vps_1")
-        self.mock_client.call.assert_called_once_with(
-            "vps", "remove", {"billingId": "test_vps_1"}
-        )
+        self.mock_client.call.assert_called_once_with("vps", "remove", {"billingId": "test_vps_1"})
 
     def test_reinstall_os(self):
         self.mock_client.call.return_value = 1
@@ -421,6 +420,7 @@ class TestPayAPI(unittest.TestCase):
     def setUp(self):
         self.mock_client = Mock()
         from sweb_api.api.pay import PayAPI
+
         self.pay = PayAPI(self.mock_client, "pay")
 
     def test_get_balance(self):
@@ -452,7 +452,7 @@ class TestSwebClientProperties(unittest.TestCase):
         mock_client.set_token = Mock()
         mock_jsonrpc_client.return_value = mock_client
 
-        with patch.object(SwebClient, '_authenticate', return_value="token"):
+        with patch.object(SwebClient, "_authenticate", return_value="token"):
             client = SwebClient("user", "pass")
 
         self.assertIsNotNone(client.domains)
@@ -478,6 +478,7 @@ class TestEdgeCases(unittest.TestCase):
     def test_special_characters_in_params(self):
         mock_client = Mock()
         from sweb_api.api.domains import DomainsAPI
+
         domains = DomainsAPI(mock_client, "domains")
 
         mock_client.call.return_value = 1
@@ -489,6 +490,7 @@ class TestEdgeCases(unittest.TestCase):
     def test_unicode_domain_names(self):
         mock_client = Mock()
         from sweb_api.api.domains import DomainsAPI
+
         domains = DomainsAPI(mock_client, "domains")
 
         mock_client.call.return_value = [{"value": "*.xn--p1ai.xn--p1ai", "name": "*.тест.рф"}]
@@ -498,6 +500,7 @@ class TestEdgeCases(unittest.TestCase):
     def test_empty_optional_params(self):
         mock_client = Mock()
         from sweb_api.api.vh import UtilsAPI
+
         utils = UtilsAPI(mock_client, "vh/utils")
 
         mock_client.call.return_value = 1
@@ -509,10 +512,14 @@ class TestDiskUsageAPI(unittest.TestCase):
     def setUp(self):
         self.mock_client = Mock()
         from sweb_api.api.vh import DiskUsageAPI
+
         self.disk = DiskUsageAPI(self.mock_client, "vh/utils/diskUsage")
 
     def test_get_tasks_info(self):
-        self.mock_client.call.return_value = {"activeTasksCount": "0", "lastDoneTaskDate": "2023-02-28"}
+        self.mock_client.call.return_value = {
+            "activeTasksCount": "0",
+            "lastDoneTaskDate": "2023-02-28",
+        }
         result = self.disk.get_tasks_info()
         self.assertEqual(result["activeTasksCount"], "0")
 

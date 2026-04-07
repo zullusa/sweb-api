@@ -57,7 +57,9 @@ class VPSAPI(BaseAPI):
         return self._call("load", {"billingId": billing_id})
 
     def get_constructor_plan_id(self, cpu: int, ram: int, disk: int, backup: bool = False) -> Any:
-        return self._call("getConstructorPlanId", {"cpu": cpu, "ram": ram, "disk": disk, "backup": backup})
+        return self._call(
+            "getConstructorPlanId", {"cpu": cpu, "ram": ram, "disk": disk, "backup": backup}
+        )
 
     def change_plan(self, billing_id: str, plan_id: int) -> Any:
         return self._call("changePlan", {"billingId": billing_id, "planId": plan_id})
@@ -80,7 +82,10 @@ class VPSAPI(BaseAPI):
         os_distrib_id: int,
         save_disk: bool = True,
     ) -> int:
-        return self._call("reinstallOs", {"billingId": billing_id, "os_distr_id": os_distrib_id, "save_disk": save_disk})
+        return self._call(
+            "reinstallOs",
+            {"billingId": billing_id, "os_distr_id": os_distrib_id, "save_disk": save_disk},
+        )
 
     def logs(self, billing_id: str) -> Any:
         return self._call("logs", {"billingId": billing_id})
@@ -97,7 +102,9 @@ class VPSBackupAPI(BaseAPI):
         return self._call("restore", {"billingId": billing_id, "backupId": backup_id})
 
     def restore_int(self, billing_id: str, backup_id: str, disk: int) -> int:
-        return self._call("restoreInt", {"billingId": billing_id, "backupId": backup_id, "disk": disk})
+        return self._call(
+            "restoreInt", {"billingId": billing_id, "backupId": backup_id, "disk": disk}
+        )
 
     def remove(self, billing_id: str, backup_id: str) -> int:
         return self._call("remove", {"billingId": billing_id, "backupId": backup_id})
@@ -159,7 +166,9 @@ class VPSProtectedIPAPI(BaseAPI):
         return self._call("updateProtected", {"billingId": billing_id, "ip": ip, "enable": enable})
 
     def move_protected(self, billing_id: str, ip: str, new_billing_id: str) -> int:
-        return self._call("moveProtected", {"billingId": billing_id, "ip": ip, "newBillingId": new_billing_id})
+        return self._call(
+            "moveProtected", {"billingId": billing_id, "ip": ip, "newBillingId": new_billing_id}
+        )
 
     def add(self, billing_id: str, ip: str) -> int:
         return self._call("add", {"billingId": billing_id, "ip": ip})
@@ -202,7 +211,9 @@ class VPSDBaaSAPI(BaseAPI):
         node_count: int = 1,
         node_type: str = "db1",
     ) -> Any:
-        return self._call("createInstance", {"name": name, "node_count": node_count, "node_type": node_type})
+        return self._call(
+            "createInstance", {"name": name, "node_count": node_count, "node_type": node_type}
+        )
 
     def edit_instance(self, billing_id: str, name: str) -> int:
         return self._call("editInstance", {"billingId": billing_id, "name": name})
@@ -245,7 +256,9 @@ class VPSRemoteBackupAPI(BaseAPI):
         return self._call("restore", {"billingId": billing_id, "backupId": backup_id})
 
     def restore_int(self, billing_id: str, backup_id: str, disk: int) -> int:
-        return self._call("restoreInt", {"billingId": billing_id, "backupId": backup_id, "disk": disk})
+        return self._call(
+            "restoreInt", {"billingId": billing_id, "backupId": backup_id, "disk": disk}
+        )
 
     def remove(self, billing_id: str, backup_id: str) -> int:
         return self._call("remove", {"billingId": billing_id, "backupId": backup_id})
@@ -289,13 +302,16 @@ class VPSMonitoringChecksAPI(BaseAPI):
         port: int,
         interval: int = 60,
     ) -> int:
-        return self._call("create", {
-            "billingId": billing_id,
-            "check_type": check_type,
-            "host": host,
-            "port": port,
-            "interval": interval,
-        })
+        return self._call(
+            "create",
+            {
+                "billingId": billing_id,
+                "check_type": check_type,
+                "host": host,
+                "port": port,
+                "interval": interval,
+            },
+        )
 
     def edit(
         self,
@@ -305,13 +321,16 @@ class VPSMonitoringChecksAPI(BaseAPI):
         port: int,
         interval: int = 60,
     ) -> int:
-        return self._call("edit", {
-            "billingId": billing_id,
-            "checkId": check_id,
-            "host": host,
-            "port": port,
-            "interval": interval,
-        })
+        return self._call(
+            "edit",
+            {
+                "billingId": billing_id,
+                "checkId": check_id,
+                "host": host,
+                "port": port,
+                "interval": interval,
+            },
+        )
 
     def activate(self, billing_id: str, check_id: int) -> int:
         return self._call("activate", {"billingId": billing_id, "checkId": check_id})
@@ -349,13 +368,17 @@ class VPSMonitoringContactsAPI(BaseAPI):
         return self._call("addEmail", {"contactId": contact_id, "email": email})
 
     def edit_email(self, contact_id: int, email_id: int, email: str) -> int:
-        return self._call("editEmail", {"contactId": contact_id, "emailId": email_id, "email": email})
+        return self._call(
+            "editEmail", {"contactId": contact_id, "emailId": email_id, "email": email}
+        )
 
     def add_phone(self, contact_id: int, phone: str) -> int:
         return self._call("addPhone", {"contactId": contact_id, "phone": phone})
 
     def edit_phone(self, contact_id: int, phone_id: int, phone: str) -> int:
-        return self._call("editPhone", {"contactId": contact_id, "phoneId": phone_id, "phone": phone})
+        return self._call(
+            "editPhone", {"contactId": contact_id, "phoneId": phone_id, "phone": phone}
+        )
 
     def delete_contact(self, contact_id: int) -> int:
         return self._call("deleteContact", {"contactId": contact_id})
