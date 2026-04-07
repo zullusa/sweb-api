@@ -1,3 +1,5 @@
+from typing import Any
+
 from sweb_api.http.client import JSONRPCClient
 from sweb_api.api.domains import DomainsAPI, DomainsBonusAPI, DomainsPersonsAPI, DomainsDNSAPI
 from sweb_api.api.vh import (
@@ -40,10 +42,11 @@ class SwebClient:
         self._token = self._authenticate()
         self._client.set_token(self._token)
 
-    def _authenticate(self) -> str:
+    def _authenticate(self) -> Any:
         client = JSONRPCClient(f"{self.BASE_URL}/notAuthorized")
         try:
-            result = client.call("getToken", {"login": self._login, "password": self._password})
+            params = {"login": self._login, "password": self._password}
+            result = client.call("getToken", params)  # type: ignore[arg-type]
             if not result or not isinstance(result, str):
                 raise AuthenticationError("Invalid token received")
             return result

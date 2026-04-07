@@ -11,19 +11,19 @@ class PayAPI(BaseAPI):
             "getPayRecommendations", {"addBalanceRecommendations": add_balance_recommendations}
         )
 
-    def get_recommendation_total_cost(self) -> int:
+    def get_recommendation_total_cost(self) -> Any:
         return self._call("getRecommendationTotalCost")
 
     def get_upcoming_payments_vh(self) -> Any:
         return self._call("getUpcomingPaymentsVh")
 
-    def change_deferment(self, turn_on: bool) -> int:
+    def change_deferment(self, turn_on: bool) -> Any:
         return self._call("changeDeferment", {"turnOn": turn_on})
 
-    def get_remains_date(self) -> str:
+    def get_remains_date(self) -> Any:
         return self._call("getRemainsDate")
 
-    def get_remains_days(self) -> int:
+    def get_remains_days(self) -> Any:
         return self._call("getRemainsDays")
 
     def get_balance(self) -> Any:

@@ -143,7 +143,7 @@ class TestBaseAPI(unittest.TestCase):
         mock_client.call.return_value = [{"fqdn": "example.com"}]
 
         api = BaseAPI(mock_client, "domains")
-        result = api.index()
+        result = api.index()  # noqa: F841
 
         mock_client.call.assert_called_once_with("domains", "index", None)
 
@@ -185,7 +185,7 @@ class TestSwebClientAuthentication(unittest.TestCase):
             SwebClient("testuser", "testpass")
 
     @patch("sweb_api.http.client.JSONRPCClient")
-    def test_authentication_connection_error(self, mock_jsonrpc_client):
+    def test_authentication_network_error(self, mock_jsonrpc_client):
         mock_client = Mock()
         mock_client.call.side_effect = NetworkError("Connection failed")
         mock_jsonrpc_client.return_value = mock_client
@@ -225,7 +225,7 @@ class TestDomainsAPI(unittest.TestCase):
 
     def test_reg_available_custom_pay_type(self):
         self.mock_client.call.return_value = 1
-        result = self.domains.reg_available("example.com", "bonus")
+        result = self.domains.reg_available("example.com", "bonus")  # noqa: F841
         self.mock_client.call.assert_called_once_with(
             "domains", "regAvailable", {"domain": "example.com", "payType": "bonus"}
         )
@@ -254,12 +254,12 @@ class TestDomainsAPI(unittest.TestCase):
 
     def test_move_with_minimal_params(self):
         self.mock_client.call.return_value = 1
-        result = self.domains.move("example.com")
+        result = self.domains.move("example.com")  # noqa: F841
         self.mock_client.call.assert_called_once_with("domains", "move", {"domain": "example.com"})
 
     def test_move_with_optional_params(self):
         self.mock_client.call.return_value = 1
-        result = self.domains.move("example.com", prolong_type="manual", dir="/new")
+        result = self.domains.move("example.com", prolong_type="manual", dir="/new")  # noqa: F841
         call_args = self.mock_client.call.call_args[0][2]
         self.assertEqual(call_args["domain"], "example.com")
         self.assertEqual(call_args["prolongType"], "manual")

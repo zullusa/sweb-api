@@ -9,13 +9,13 @@ class DomainsAPI(BaseAPI):
     def get_domain_info(self, domain: str) -> Any:
         return self._call("getDomainInfo", {"domain": domain})
 
-    def reg_available(self, domain: str, pay_type: str = "balance") -> int:
+    def reg_available(self, domain: str, pay_type: str = "balance") -> Any:
         return self._call("regAvailable", {"domain": domain, "payType": pay_type})
 
     def get_available_packages(self, domains: str) -> Any:
         return self._call("getAvailablePackages", {"domains": domains})
 
-    def reg_list(self, domains: str) -> int:
+    def reg_list(self, domains: str) -> Any:
         return self._call("regList", {"domains": domains})
 
     def reg(
@@ -27,8 +27,8 @@ class DomainsAPI(BaseAPI):
         auto_reg: Optional[int] = None,
         dir: Optional[str] = None,
         id_shield: Optional[bool] = None,
-    ) -> int:
-        params = {"domain": domain, "payType": pay_type}
+    ) -> Any:
+        params: dict = {"domain": domain, "payType": pay_type}
         if dom_person is not None:
             params["domPerson"] = dom_person
         if prolong_type is not None:
@@ -57,37 +57,37 @@ class DomainsAPI(BaseAPI):
     def move_list(self, domains: list) -> Any:
         return self._call("moveList", {"domains": domains})
 
-    def change_prolong(self, domain: str, prolong_type: str) -> int:
+    def change_prolong(self, domain: str, prolong_type: str) -> Any:
         return self._call("changeProlong", {"domain": domain, "prolongType": prolong_type})
 
-    def change_prolong_list(self, domains: list) -> int:
+    def change_prolong_list(self, domains: list) -> Any:
         return self._call("changeProlongList", {"domains": domains})
 
-    def remove(self, domain: str) -> int:
+    def remove(self, domain: str) -> Any:
         return self._call("remove", {"domain": domain})
 
-    def remove_list(self, domains: str) -> int:
+    def remove_list(self, domains: str) -> Any:
         return self._call("removeList", {"domains": domains})
 
-    def prolong(self, domain: str, pay_type: str = "balance") -> int:
+    def prolong(self, domain: str, pay_type: str = "balance") -> Any:
         return self._call("prolong", {"domain": domain, "payType": pay_type})
 
     def prolong_list(self, domains: str) -> Any:
         return self._call("prolongList", {"domains": domains})
 
-    def price_for_transfer(self, domain: str) -> int:
+    def price_for_transfer(self, domain: str) -> Any:
         return self._call("priceForTrasfer", {"domain": domain})
 
-    def price_for_registration(self, domain: str) -> str:
+    def price_for_registration(self, domain: str) -> Any:
         return self._call("priceForRegistration", {"domain": domain})
 
-    def remove_subdomain(self, domain: str, machine: str) -> int:
+    def remove_subdomain(self, domain: str, machine: str) -> Any:
         return self._call("removeSubdomain", {"domain": domain, "machine": machine})
 
-    def create_subdomain(self, domain: str, machine: str, dir: str) -> int:
+    def create_subdomain(self, domain: str, machine: str, dir: str) -> Any:
         return self._call("createSubdomain", {"domain": domain, "machine": machine, "dir": dir})
 
-    def set_redirect_vh(self, domain: str, redirect: str) -> int:
+    def set_redirect_vh(self, domain: str, redirect: str) -> Any:
         return self._call("setRedirectVh", {"domain": domain, "redirect": redirect})
 
     def get_redirect_vh(self, domain: str) -> Any:
@@ -98,7 +98,7 @@ class DomainsBonusAPI(BaseAPI):
     def get_list(self) -> Any:
         return self._call("getList")
 
-    def buy(self, bonus_id: int) -> int:
+    def buy(self, bonus_id: int) -> Any:
         return self._call("buy", {"bonusId": bonus_id})
 
 
@@ -122,7 +122,7 @@ class DomainsPersonsAPI(BaseAPI):
         pass_org: str,
         inn: Optional[str] = None,
         id: Optional[int] = None,
-    ) -> int:
+    ) -> Any:
         params = {
             "name": name,
             "resident": resident,
@@ -161,7 +161,7 @@ class DomainsPersonsAPI(BaseAPI):
         phones2: Optional[str] = None,
         faxes: Optional[str] = None,
         kpp: Optional[str] = None,
-    ) -> int:
+    ) -> Any:
         params = {
             "name": name,
             "nameTrans": name_trans,
@@ -198,7 +198,7 @@ class DomainsDNSAPI(BaseAPI):
         priority: int,
         value: str,
         sub_domain: Optional[str] = None,
-    ) -> int:
+    ) -> Any:
         params = {
             "domain": domain,
             "action": action,
@@ -223,7 +223,7 @@ class DomainsDNSAPI(BaseAPI):
         protocol: str,
         port: int,
         sub_domain: Optional[str] = None,
-    ) -> bool:
+    ) -> Any:
         params = {
             "domain": domain,
             "action": action,
@@ -247,7 +247,7 @@ class DomainsDNSAPI(BaseAPI):
         index: int,
         sub_domain: Optional[str] = None,
         value: Optional[str] = None,
-    ) -> bool:
+    ) -> Any:
         params = {"domain": domain, "action": action, "index": index}
         if sub_domain is not None:
             params["subDomain"] = sub_domain
@@ -262,7 +262,7 @@ class DomainsDNSAPI(BaseAPI):
         index: int,
         sub_domain: Optional[str] = None,
         value: Optional[str] = None,
-    ) -> bool:
+    ) -> Any:
         params = {"domain": domain, "action": action, "index": index}
         if sub_domain is not None:
             params["subDomain"] = sub_domain

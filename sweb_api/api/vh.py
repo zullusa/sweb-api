@@ -13,8 +13,8 @@ class SitesAPI(BaseAPI):
         domain: Optional[str] = None,
         machine: Optional[str] = None,
         enable_redis_session: Optional[bool] = None,
-    ) -> int:
-        params = {"alias": alias, "docRoot": doc_root}
+    ) -> Any:
+        params: dict = {"alias": alias, "docRoot": doc_root}
         if domain is not None:
             params["domain"] = domain
         if machine is not None:
@@ -28,13 +28,13 @@ class SitesAPI(BaseAPI):
         doc_root: str,
         alias: str,
         doc_root_new: Optional[str] = None,
-    ) -> int:
+    ) -> Any:
         params = {"docRoot": doc_root, "alias": alias}
         if doc_root_new is not None:
             params["docRootNew"] = doc_root_new
         return self._call("edit", params)
 
-    def delete(self, doc_root: str) -> int:
+    def delete(self, doc_root: str) -> Any:
         return self._call("del", {"docRoot": doc_root})
 
     def change_domain_site(
@@ -42,7 +42,7 @@ class SitesAPI(BaseAPI):
         domain: str,
         doc_root: str,
         machine: Optional[str] = None,
-    ) -> int:
+    ) -> Any:
         params = {"domain": domain, "docRoot": doc_root}
         if machine is not None:
             params["machine"] = machine
@@ -51,7 +51,7 @@ class SitesAPI(BaseAPI):
     def get_backends_list(self) -> Any:
         return self._call("getBackEndsList")
 
-    def change_backend(self, doc_root: str, back_end_id: int) -> int:
+    def change_backend(self, doc_root: str, back_end_id: int) -> Any:
         return self._call("changeBackEnd", {"docRoot": doc_root, "idBackEnd": back_end_id})
 
 
@@ -72,7 +72,7 @@ class HostingAPI(BaseAPI):
             params["filter"] = filter
         return self._call("databaseGetList", params)
 
-    def mysql_change_pass(self, db_name: str, db_password: str) -> int:
+    def mysql_change_pass(self, db_name: str, db_password: str) -> Any:
         return self._call("databaseMysqlChangePass", {"dbName": db_name, "dbPassword": db_password})
 
     def mysql_create(
@@ -81,7 +81,7 @@ class HostingAPI(BaseAPI):
         db_password: str,
         db_comment: Optional[str] = None,
         db_version: Optional[str] = None,
-    ) -> int:
+    ) -> Any:
         params = {"dbName": db_name, "dbPassword": db_password}
         if db_comment is not None:
             params["dbComment"] = db_comment
@@ -89,22 +89,22 @@ class HostingAPI(BaseAPI):
             params["dbVersion"] = db_version
         return self._call("databaseMysqlCreate", params)
 
-    def mysql_import(self, db_name: str, file_patch: str) -> int:
+    def mysql_import(self, db_name: str, file_patch: str) -> Any:
         return self._call("databaseMysqlImport", {"dbName": db_name, "filePatch": file_patch})
 
-    def mysql_make_copy(self, db_name: str) -> int:
+    def mysql_make_copy(self, db_name: str) -> Any:
         return self._call("databaseMysqlMakeCopy", {"dbName": db_name})
 
     def mysql_access_list(self, db_name: str) -> Any:
         return self._call("databaseMysqlAccessList", {"dbName": db_name})
 
-    def mysql_access_create(self, db_name: str, rule: str) -> int:
+    def mysql_access_create(self, db_name: str, rule: str) -> Any:
         return self._call("databaseMysqlAccessCreate", {"dbName": db_name, "rule": rule})
 
-    def mysql_access_delete(self, db_name: str, rule: str) -> int:
+    def mysql_access_delete(self, db_name: str, rule: str) -> Any:
         return self._call("databaseMysqlAccessDelete", {"dbName": db_name, "rule": rule})
 
-    def mysql_delete(self, db_name: str) -> int:
+    def mysql_delete(self, db_name: str) -> Any:
         return self._call("databaseMysqlDelete", {"dbName": db_name})
 
     def pgsql_create(
@@ -113,7 +113,7 @@ class HostingAPI(BaseAPI):
         db_password: str,
         db_charset: Optional[str] = None,
         db_comment: Optional[str] = None,
-    ) -> int:
+    ) -> Any:
         params = {"dbName": db_name, "dbPassword": db_password}
         if db_charset is not None:
             params["dbCharset"] = db_charset
@@ -121,13 +121,13 @@ class HostingAPI(BaseAPI):
             params["dbComment"] = db_comment
         return self._call("databasePgsqlCreate", params)
 
-    def pgsql_delete(self, db_name: str) -> int:
+    def pgsql_delete(self, db_name: str) -> Any:
         return self._call("databasePgsqlDelete", {"dbName": db_name})
 
-    def pgsql_change_pass(self, db_name: str, db_password: str) -> int:
+    def pgsql_change_pass(self, db_name: str, db_password: str) -> Any:
         return self._call("databasePgsqlChangePass", {"dbName": db_name, "dbPassword": db_password})
 
-    def edit_comment(self, db_type: str, db_name: str, db_comment: str) -> int:
+    def edit_comment(self, db_type: str, db_name: str, db_comment: str) -> Any:
         return self._call(
             "databaseEditComment", {"dbType": db_type, "dbName": db_name, "dbComment": db_comment}
         )
@@ -140,10 +140,10 @@ class BackupAPI(BaseAPI):
     def get_list(self) -> Any:
         return self._call("getList")
 
-    def make_account_copy(self) -> int:
+    def make_account_copy(self) -> Any:
         return self._call("makeAccountCopy")
 
-    def restore_files(self, date: str, files: list) -> int:
+    def restore_files(self, date: str, files: list) -> Any:
         return self._call("restoreFiles", {"date": date, "files": files})
 
     def download_file(self, date: str, files: list) -> Any:
@@ -155,13 +155,13 @@ class BackupAPI(BaseAPI):
     def get_list_mysql(self, date: str, dir: str) -> Any:
         return self._call("getListMysql", {"date": date, "dir": dir})
 
-    def receive_files(self, date: str, files: list) -> int:
+    def receive_files(self, date: str, files: list) -> Any:
         return self._call("receiveFiles", {"date": date, "files": files})
 
-    def receive_mysql(self, date: str, databases: list) -> int:
+    def receive_mysql(self, date: str, databases: list) -> Any:
         return self._call("receiveMysql", {"date": date, "databases": databases})
 
-    def restore_mysql(self, date: str, databases: list) -> int:
+    def restore_mysql(self, date: str, databases: list) -> Any:
         return self._call("restoreMysql", {"date": date, "databases": databases})
 
 
@@ -203,7 +203,7 @@ class MailAPI(BaseAPI):
             params["searchMbox"] = search_mbox
         return self._call("getMailboxesList", params)
 
-    def get_mail_quota(self) -> int:
+    def get_mail_quota(self) -> Any:
         return self._call("getMailQuota")
 
     def create_mbox(
@@ -218,45 +218,45 @@ class MailAPI(BaseAPI):
             params["comment"] = comment
         return self._call("createMbox", params)
 
-    def send_requisites_to_email(self, email: str, login: str, password: str) -> int:
+    def send_requisites_to_email(self, email: str, login: str, password: str) -> Any:
         return self._call(
             "sendRequisitesToEmail", {"email": email, "login": login, "password": password}
         )
 
-    def drop_mbox(self, domain: str, mbox: str) -> int:
+    def drop_mbox(self, domain: str, mbox: str) -> Any:
         return self._call("dropMbox", {"domain": domain, "mbox": mbox})
 
-    def update_antispam_state(self, domain: str, mbox: str, value: int) -> int:
+    def update_antispam_state(self, domain: str, mbox: str, value: int) -> Any:
         return self._call("updateAntispamState", {"domain": domain, "mbox": mbox, "value": value})
 
-    def update_comment(self, domain: str, mbox: str, comment: str) -> int:
+    def update_comment(self, domain: str, mbox: str, comment: str) -> Any:
         return self._call("updateComment", {"domain": domain, "mbox": mbox, "comment": comment})
 
-    def get_autoreply(self, domain: str, mbox: str) -> str:
+    def get_autoreply(self, domain: str, mbox: str) -> Any:
         return self._call("getAutoreply", {"domain": domain, "mbox": mbox})
 
-    def change_autoreply(self, domain: str, mbox: str, text: str) -> int:
+    def change_autoreply(self, domain: str, mbox: str, text: str) -> Any:
         return self._call("changeAutoreply", {"domain": domain, "mbox": mbox, "text": text})
 
-    def change_mailbox_spf(self, domain: str, mbox: str, turn_on: bool) -> int:
+    def change_mailbox_spf(self, domain: str, mbox: str, turn_on: bool) -> Any:
         return self._call("changeMailboxSpf", {"domain": domain, "mbox": mbox, "turnOn": turn_on})
 
-    def change_domain_spf(self, domain: str, turn_on: bool) -> int:
+    def change_domain_spf(self, domain: str, turn_on: bool) -> Any:
         return self._call("changeDomainSpf", {"domain": domain, "turnOn": turn_on})
 
     def get_forwarding_emails_list(self, domain: str, mbox: str) -> Any:
         return self._call("getForwardingEmailsList", {"domain": domain, "mbox": mbox})
 
-    def add_forwarding_email(self, domain: str, mbox: str, email: str) -> int:
+    def add_forwarding_email(self, domain: str, mbox: str, email: str) -> Any:
         return self._call("addForwardingEmail", {"domain": domain, "mbox": mbox, "email": email})
 
-    def remove_forwarding_email(self, domain: str, mbox: str, email: str) -> int:
+    def remove_forwarding_email(self, domain: str, mbox: str, email: str) -> Any:
         return self._call("removeForwardingEmail", {"domain": domain, "mbox": mbox, "email": email})
 
-    def is_enabled_deleting_after_forwarding(self, domain: str, mbox: str) -> int:
+    def is_enabled_deleting_after_forwarding(self, domain: str, mbox: str) -> Any:
         return self._call("isEnabledDeletingAfterForwarding", {"domain": domain, "mbox": mbox})
 
-    def change_deleting_after_forwarding(self, domain: str, mbox: str, turn_on: bool) -> int:
+    def change_deleting_after_forwarding(self, domain: str, mbox: str, turn_on: bool) -> Any:
         return self._call(
             "changeDeletingAfterForwarding", {"domain": domain, "mbox": mbox, "turnOn": turn_on}
         )
@@ -272,34 +272,34 @@ class MailAPI(BaseAPI):
     def get_delivery_info(self, domain: str, mbox: str) -> Any:
         return self._call("getDeliveryInfo", {"domain": domain, "mbox": mbox})
 
-    def add_delivery_address(self, domain: str, mbox: str, email: str) -> int:
+    def add_delivery_address(self, domain: str, mbox: str, email: str) -> Any:
         return self._call("addDeliveryAddress", {"domain": domain, "mbox": mbox, "email": email})
 
-    def drop_delivery_address(self, domain: str, mbox: str, email: str) -> int:
+    def drop_delivery_address(self, domain: str, mbox: str, email: str) -> Any:
         return self._call("dropDeliveryAddress", {"domain": domain, "mbox": mbox, "email": email})
 
-    def get_mails_collector(self, domain: str) -> str:
+    def get_mails_collector(self, domain: str) -> Any:
         return self._call("getMailsCollector", {"domain": domain})
 
-    def change_mails_collector(self, domain: str, email: str) -> int:
+    def change_mails_collector(self, domain: str, email: str) -> Any:
         return self._call("changeMailsCollector", {"domain": domain, "email": email})
 
-    def remove_mails_collector(self, domain: str) -> int:
+    def remove_mails_collector(self, domain: str) -> Any:
         return self._call("removeMailsCollector", {"domain": domain})
 
-    def confirm_mails_collector_email(self, domain: str, token: str) -> int:
+    def confirm_mails_collector_email(self, domain: str, token: str) -> Any:
         return self._call("confirmMailsCollectorEmail", {"domain": domain, "token": token})
 
-    def change_sender_verify(self, domain: str, turn_on: bool) -> int:
+    def change_sender_verify(self, domain: str, turn_on: bool) -> Any:
         return self._call("changeSenderVerify", {"domain": domain, "turnOn": turn_on})
 
-    def change_auto_discover(self, domain: str, turn_on: bool) -> int:
+    def change_auto_discover(self, domain: str, turn_on: bool) -> Any:
         return self._call("changeAutoDiscover", {"domain": domain, "turnOn": turn_on})
 
-    def delete_mails(self, domain: str, mbox: str, days: int) -> int:
+    def delete_mails(self, domain: str, mbox: str, days: int) -> Any:
         return self._call("deleteMails", {"domain": domain, "mbox": mbox, "days": days})
 
-    def change_mailbox_password(self, domain: str, mbox: str, password: str) -> int:
+    def change_mailbox_password(self, domain: str, mbox: str, password: str) -> Any:
         return self._call(
             "changeMailboxPassword", {"domain": domain, "mbox": mbox, "password": password}
         )
@@ -314,26 +314,26 @@ class MailAPI(BaseAPI):
             "getBlacklist", {"domain": domain, "mbox": mbox, "page": page, "limit": limit}
         )
 
-    def add_to_whitelist(self, domain: str, mbox: str, address: str, all: bool = False) -> int:
+    def add_to_whitelist(self, domain: str, mbox: str, address: str, all: bool = False) -> Any:
         return self._call(
             "addToWhitelist", {"domain": domain, "mbox": mbox, "address": address, "all": all}
         )
 
-    def add_to_blacklist(self, domain: str, mbox: str, email: str, all: bool = False) -> int:
+    def add_to_blacklist(self, domain: str, mbox: str, email: str, all: bool = False) -> Any:
         return self._call(
             "addToBlacklist", {"domain": domain, "mbox": mbox, "email": email, "all": all}
         )
 
-    def drop_from_whitelist(self, domain: str, mbox: str, address: str) -> int:
+    def drop_from_whitelist(self, domain: str, mbox: str, address: str) -> Any:
         return self._call("dropFromWhitelist", {"domain": domain, "mbox": mbox, "address": address})
 
-    def drop_from_blacklist(self, domain: str, mbox: str, email: str) -> int:
+    def drop_from_blacklist(self, domain: str, mbox: str, email: str) -> Any:
         return self._call("dropFromBlacklist", {"domain": domain, "mbox": mbox, "email": email})
 
-    def enable_dkim(self, domain: str) -> int:
+    def enable_dkim(self, domain: str) -> Any:
         return self._call("enableDkim", {"domain": domain})
 
-    def disable_dkim(self, domain: str) -> int:
+    def disable_dkim(self, domain: str) -> Any:
         return self._call("disableDkim", {"domain": domain})
 
 
@@ -344,16 +344,16 @@ class SSLAPI(BaseAPI):
     def download(self, id: int, password: str) -> Any:
         return self._call("download", {"id": id, "password": password})
 
-    def edit_autoprolong(self, certificate_id: int, autoprolong: bool) -> int:
+    def edit_autoprolong(self, certificate_id: int, autoprolong: bool) -> Any:
         return self._call("editAutoprolong", {"id": certificate_id, "autoprolong": autoprolong})
 
-    def remove_certificate(self, certificate_id: int) -> int:
+    def remove_certificate(self, certificate_id: int) -> Any:
         return self._call("removeCertificate", {"id": certificate_id})
 
     def get_prolong_info(self, certificate_id: int) -> Any:
         return self._call("getProlongInfo", {"id": certificate_id})
 
-    def prolong_certificate(self, current_certificate_id: int, certificate_prolong_id: int) -> int:
+    def prolong_certificate(self, current_certificate_id: int, certificate_prolong_id: int) -> Any:
         return self._call(
             "prolongCertificate",
             {"id": current_certificate_id, "certificateProlongId": certificate_prolong_id},
@@ -366,7 +366,7 @@ class SSLAPI(BaseAPI):
         ip: str = "sni",
         wildcard: int = 0,
         challenge: str = "dns",
-    ) -> int:
+    ) -> Any:
         params = {"domain": domain, "ip": ip, "wildcard": wildcard, "challenge": challenge}
         if virtdom is not None:
             params["virtdom"] = virtdom
@@ -384,10 +384,10 @@ class LoadAPI(BaseAPI):
 
 
 class UtilsAPI(BaseAPI):
-    def ssh_on(self, period: int) -> int:
+    def ssh_on(self, period: int) -> Any:
         return self._call("sshOn", {"period": period})
 
-    def ssh_off(self) -> int:
+    def ssh_off(self) -> Any:
         return self._call("sshOff")
 
 
@@ -400,7 +400,7 @@ class CronAPI(BaseAPI):
         month: int,
         weekday: int,
         command: str,
-    ) -> int:
+    ) -> Any:
         return self._call(
             "addTask",
             {
@@ -422,7 +422,7 @@ class CronAPI(BaseAPI):
         month: int,
         weekday: int,
         command: str,
-    ) -> int:
+    ) -> Any:
         return self._call(
             "editTask",
             {
@@ -436,7 +436,7 @@ class CronAPI(BaseAPI):
             },
         )
 
-    def remove_task(self, task: str) -> int:
+    def remove_task(self, task: str) -> Any:
         return self._call("removeTask", {"task": task})
 
     def get_tasks(self) -> Any:
@@ -447,18 +447,18 @@ class DiskUsageAPI(BaseAPI):
     def get_tasks_info(self) -> Any:
         return self._call("getTasksInfo")
 
-    def start_task(self) -> int:
+    def start_task(self) -> Any:
         return self._call("startTask")
 
-    def get_email(self) -> str:
+    def get_email(self) -> Any:
         return self._call("getEmail")
 
-    def change_email(self, email: str) -> int:
+    def change_email(self, email: str) -> Any:
         return self._call("changeEmail", {"email": email})
 
 
 class DDGAPI(BaseAPI):
-    def count_all_domains(self) -> int:
+    def count_all_domains(self) -> Any:
         return self._call("countAllDomains")
 
     def enable(self, domain: str) -> Any:

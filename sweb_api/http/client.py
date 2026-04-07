@@ -45,7 +45,7 @@ class JSONRPCClient:
         method: str,
         params: Optional[dict] = None,
         request_id: Optional[str] = None,
-    ) -> dict:
+    ) -> Any:
         payload = {
             "jsonrpc": "2.0",
             "method": method,
