@@ -134,6 +134,7 @@ object
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -163,11 +164,13 @@ object
 "asc"
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -217,10 +220,12 @@ NULL
 "on"
 
 }
+```
 
 \]
 
-"filterInfo":{
+"filterInfo":```json
+{
 
 "page":
 
@@ -243,6 +248,7 @@ NULL
 1
 
 }
+```
 
 }
 
@@ -329,6 +335,7 @@ object
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -362,11 +369,13 @@ object
 "asc"
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -408,7 +417,9 @@ object
 "тест"
 
 }
+```
 
+```json
 {
 
 "mbox":
@@ -436,7 +447,9 @@ object
 ""
 
 }
+```
 
+```json
 {
 
 "mbox":
@@ -464,10 +477,12 @@ object
 ""
 
 }
+```
 
 \]
 
-"filterInfo":{
+"filterInfo":```json
+{
 
 "page":
 
@@ -490,6 +505,7 @@ object
 3
 
 }
+```
 
 }
 
@@ -514,6 +530,7 @@ integer
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -525,11 +542,13 @@ integer
 "getMailQuota"
 
 "params":{}
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -545,6 +564,7 @@ integer
 1
 
 }
+```
 
 createMbox
 ----------
@@ -607,6 +627,7 @@ object
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -636,11 +657,13 @@ object
 "тест"
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -682,7 +705,9 @@ object
 "Порт 143 (Для SSL 993)"
 
 }
+```
 
+```json
 {
 
 "name":
@@ -698,7 +723,9 @@ object
 "Порт 110 (Для SSL 995)"
 
 }
+```
 
+```json
 {
 
 "name":
@@ -714,6 +741,7 @@ object
 "Порт 25 или 2525 (Для SSL 465)"
 
 }
+```
 
 \]
 
@@ -721,7 +749,8 @@ object
 
 "https://help.sweb.ru/29/"
 
-"pdf":{
+"pdf":```json
+{
 
 "mimetype":
 
@@ -738,6 +767,7 @@ object
 "requisites.pdf"
 
 }
+```
 
 }
 
@@ -782,6 +812,7 @@ integer
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -807,11 +838,13 @@ integer
 "Тест123!"
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -827,6 +860,7 @@ integer
 1
 
 }
+```
 
 dropMbox
 --------
@@ -861,6 +895,7 @@ integer
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -882,11 +917,13 @@ integer
 "testmbox"
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -902,6 +939,7 @@ integer
 1
 
 }
+```
 
 updateAntispamState
 -------------------
@@ -942,6 +980,7 @@ integer
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -967,11 +1006,13 @@ integer
 5
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -987,6 +1028,7 @@ integer
 1
 
 }
+```
 
 updateComment
 -------------
@@ -1027,6 +1069,7 @@ integer
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -1052,11 +1095,13 @@ integer
 "тест"
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -1072,6 +1117,7 @@ integer
 1
 
 }
+```
 
 getAutoreply
 ------------
@@ -1106,6 +1152,7 @@ string
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -1127,11 +1174,13 @@ string
 "testmbox"
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -1147,6 +1196,7 @@ string
 "тест"
 
 }
+```
 
 changeAutoreply
 ---------------
@@ -1187,6 +1237,7 @@ integer
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -1212,11 +1263,13 @@ integer
 "текст автоответчика"
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -1232,6 +1285,7 @@ integer
 1
 
 }
+```
 
 changeMailboxSpf
 ----------------
@@ -1272,6 +1326,7 @@ integer
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -1297,11 +1352,13 @@ integer
 true
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -1317,6 +1374,7 @@ true
 1
 
 }
+```
 
 changeDomainSpf
 ---------------
@@ -1351,6 +1409,7 @@ integer
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -1372,11 +1431,13 @@ integer
 true
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -1392,6 +1453,7 @@ true
 1
 
 }
+```
 
 getForwardingEmailsList
 -----------------------
@@ -1426,6 +1488,7 @@ array
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -1447,11 +1510,13 @@ array
 "testmbox"
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -1469,6 +1534,7 @@ array
 \]
 
 }
+```
 
 addForwardingEmail
 ------------------
@@ -1509,6 +1575,7 @@ integer
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -1534,11 +1601,13 @@ integer
 "test@gmail.com"
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -1554,6 +1623,7 @@ integer
 1
 
 }
+```
 
 removeForwardingEmail
 ---------------------
@@ -1594,6 +1664,7 @@ integer
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -1619,11 +1690,13 @@ integer
 "test@gmail.com"
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -1639,6 +1712,7 @@ integer
 1
 
 }
+```
 
 isEnabledDeletingAfterForwarding
 --------------------------------
@@ -1673,6 +1747,7 @@ integer
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -1694,11 +1769,13 @@ integer
 "testmbox"
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -1714,6 +1791,7 @@ integer
 0
 
 }
+```
 
 changeDeletingAfterForwarding
 -----------------------------
@@ -1754,6 +1832,7 @@ integer
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -1779,11 +1858,13 @@ integer
 true
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -1799,6 +1880,7 @@ true
 1
 
 }
+```
 
 getDeliveryAddressesList
 ------------------------
@@ -1853,6 +1935,7 @@ array
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -1882,11 +1965,13 @@ array
 20
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -1920,6 +2005,7 @@ array
 "1"
 
 }
+```
 
 }
 
@@ -1968,6 +2054,7 @@ object
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -1989,11 +2076,13 @@ object
 "testmbox"
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -2017,8 +2106,10 @@ object
 10
 
 }
+```
 
-"addresses":{
+"addresses":```json
+{
 
 "current":
 
@@ -2029,6 +2120,7 @@ object
 100
 
 }
+```
 
 }
 
@@ -2073,6 +2165,7 @@ integer
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -2098,11 +2191,13 @@ integer
 "test@gmail.com"
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -2118,6 +2213,7 @@ integer
 1
 
 }
+```
 
 dropDeliveryAddress
 -------------------
@@ -2158,6 +2254,7 @@ integer
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -2183,11 +2280,13 @@ integer
 "test@gmail.com"
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -2203,6 +2302,7 @@ integer
 1
 
 }
+```
 
 getMailsCollector
 -----------------
@@ -2231,6 +2331,7 @@ string
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -2248,11 +2349,13 @@ string
 "test.ru"
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -2268,6 +2371,7 @@ string
 "test@gmail.com"
 
 }
+```
 
 changeMailsCollector
 --------------------
@@ -2302,6 +2406,7 @@ integer
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -2323,11 +2428,13 @@ integer
 "test@gmail.com"
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -2343,6 +2450,7 @@ integer
 1
 
 }
+```
 
 removeMailsCollector
 --------------------
@@ -2371,6 +2479,7 @@ integer
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -2388,11 +2497,13 @@ integer
 "test.ru"
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -2408,6 +2519,7 @@ integer
 1
 
 }
+```
 
 confirmMailsCollectorEmail
 --------------------------
@@ -2442,6 +2554,7 @@ integer
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -2463,11 +2576,13 @@ integer
 "dhbvjwse97s8wh"
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -2483,6 +2598,7 @@ integer
 1
 
 }
+```
 
 changeSenderVerify
 ------------------
@@ -2517,6 +2633,7 @@ integer
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -2538,11 +2655,13 @@ integer
 true
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -2558,6 +2677,7 @@ true
 1
 
 }
+```
 
 changeAutoDiscover
 ------------------
@@ -2592,6 +2712,7 @@ integer
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -2613,11 +2734,13 @@ integer
 true
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -2633,6 +2756,7 @@ true
 1
 
 }
+```
 
 deleteMails
 -----------
@@ -2673,6 +2797,7 @@ integer
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -2698,11 +2823,13 @@ integer
 7
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -2718,6 +2845,7 @@ integer
 1
 
 }
+```
 
 changeMailboxPassword
 ---------------------
@@ -2758,6 +2886,7 @@ integer
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -2783,11 +2912,13 @@ integer
 "Тест123!"
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -2803,6 +2934,7 @@ integer
 1
 
 }
+```
 
 getWhitelist
 ------------
@@ -2857,6 +2989,7 @@ object
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -2886,11 +3019,13 @@ object
 20
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -2924,6 +3059,7 @@ object
 1
 
 }
+```
 
 }
 
@@ -2982,6 +3118,7 @@ object
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -3011,11 +3148,13 @@ object
 20
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -3049,6 +3188,7 @@ object
 1
 
 }
+```
 
 }
 
@@ -3099,6 +3239,7 @@ integer
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -3128,11 +3269,13 @@ integer
 false
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -3148,6 +3291,7 @@ false
 1
 
 }
+```
 
 addToBlacklist
 --------------
@@ -3194,6 +3338,7 @@ integer
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -3223,11 +3368,13 @@ integer
 false
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -3243,6 +3390,7 @@ false
 1
 
 }
+```
 
 dropFromWhitelist
 -----------------
@@ -3283,6 +3431,7 @@ integer
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -3308,11 +3457,13 @@ integer
 "test@test.ru"
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -3328,6 +3479,7 @@ integer
 1
 
 }
+```
 
 dropFromBlacklist
 -----------------
@@ -3368,6 +3520,7 @@ integer
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -3393,11 +3546,13 @@ integer
 "test@gmail.com"
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -3413,6 +3568,7 @@ integer
 1
 
 }
+```
 
 enableDkim
 ----------
@@ -3441,6 +3597,7 @@ integer
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -3458,11 +3615,13 @@ integer
 "test.ru"
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -3478,6 +3637,7 @@ integer
 1
 
 }
+```
 
 disableDkim
 -----------
@@ -3506,6 +3666,7 @@ integer
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -3523,11 +3684,13 @@ integer
 "test.ru"
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -3543,3 +3706,4 @@ integer
 1
 
 }
+```

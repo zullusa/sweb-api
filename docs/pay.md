@@ -89,6 +89,7 @@ array
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -100,11 +101,13 @@ array
 "index"
 
 "params":{}
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -136,6 +139,7 @@ array
 "11886.0000"
 
 }
+```
 
 "credit\_balance":
 
@@ -179,7 +183,8 @@ array
 
 "active"
 
-"blockInfo":{
+"blockInfo":```json
+{
 
 "days\_date":
 
@@ -194,12 +199,14 @@ array
 "дня"
 
 }
+```
 
 "blockedMoney":
 
 36033
 
-"deferment":{
+"deferment":```json
+{
 
 "show":
 
@@ -210,6 +217,7 @@ false
 0
 
 }
+```
 
 "edgeDate":
 
@@ -240,6 +248,7 @@ boolean
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -251,11 +260,13 @@ boolean
 "isAutopaymentEnable"
 
 "params":{}
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -271,6 +282,7 @@ boolean
 false
 
 }
+```
 
 getPayRecommendations
 ---------------------
@@ -311,6 +323,7 @@ array
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -328,11 +341,13 @@ array
 "false"
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -368,6 +383,7 @@ array
 175
 
 }
+```
 
 \]
 
@@ -389,13 +405,15 @@ array
 
 0
 
-"domain\_bonuses\_by\_tld":{
+"domain\_bonuses\_by\_tld":```json
+{
 
 "any":
 
 0
 
 }
+```
 
 }
 
@@ -422,6 +440,7 @@ integer
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -433,11 +452,13 @@ integer
 "getRecommendationTotalCost"
 
 "params":{}
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -453,6 +474,7 @@ integer
 949
 
 }
+```
 
 getUpcomingPaymentsVh
 ---------------------
@@ -507,6 +529,7 @@ array
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -518,11 +541,13 @@ array
 "getUpcomingPaymentsVh"
 
 "params":{}
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -610,7 +635,9 @@ array
 "ru"
 
 }
+```
 
+```json
 {
 
 "id":
@@ -686,7 +713,9 @@ array
 "ru"
 
 }
+```
 
+```json
 {
 
 "id":
@@ -742,7 +771,9 @@ array
 "22"
 
 }
+```
 
+```json
 {
 
 "id":
@@ -798,7 +829,9 @@ array
 "22"
 
 }
+```
 
+```json
 {
 
 "id":
@@ -850,6 +883,7 @@ array
 "22"
 
 }
+```
 
 \]
 
@@ -882,6 +916,7 @@ integer
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -899,11 +934,13 @@ integer
 "false"
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -919,6 +956,7 @@ integer
 1
 
 }
+```
 
 getRemainsDate
 --------------
@@ -939,6 +977,7 @@ string
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -950,11 +989,13 @@ string
 "getRemainsDate"
 
 "params":{}
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -970,6 +1011,7 @@ string
 "01.10.2023"
 
 }
+```
 
 getRemainsDays
 --------------
@@ -990,6 +1032,7 @@ integer
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -1001,11 +1044,13 @@ integer
 "getRemainsDays"
 
 "params":{}
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -1021,6 +1066,7 @@ integer
 15
 
 }
+```
 
 getBalance
 ----------
@@ -1061,6 +1107,7 @@ array
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -1072,11 +1119,13 @@ array
 "getBalance"
 
 "params":{}
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -1110,6 +1159,7 @@ array
 "52.0000"
 
 }
+```
 
 "credit\_balance":
 
@@ -1174,6 +1224,7 @@ array
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -1185,11 +1236,13 @@ array
 "getActiveReserves"
 
 "params":{}
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -1219,6 +1272,7 @@ array
 "2027-01-20"
 
 }
+```
 
 "type":
 
@@ -1230,6 +1284,7 @@ array
 
 }
 
+```json
 {
 
 "charge":
@@ -1247,6 +1302,7 @@ array
 NULL
 
 }
+```
 
 "type":
 

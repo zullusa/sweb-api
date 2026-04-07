@@ -143,6 +143,7 @@ object
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -172,11 +173,13 @@ true
 "inn"
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -270,7 +273,9 @@ true
 true
 
 }
+```
 
+```json
 {
 
 "docRoot":
@@ -294,6 +299,7 @@ true
 true
 
 }
+```
 
 \]
 
@@ -343,6 +349,7 @@ true
 
 "list":\[
 
+```json
 {
 
 "type":
@@ -378,6 +385,7 @@ true
 "тест"
 
 }
+```
 
 \]
 
@@ -418,6 +426,7 @@ integer
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -439,11 +448,13 @@ integer
 "......"
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -459,6 +470,7 @@ integer
 1
 
 }
+```
 
 databaseMysqlCreate
 -------------------
@@ -505,6 +517,7 @@ integer
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -534,11 +547,13 @@ integer
 "8"
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -554,6 +569,7 @@ integer
 1
 
 }
+```
 
 databaseMysqlImport
 -------------------
@@ -588,6 +604,7 @@ integer
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -609,11 +626,13 @@ integer
 "/mydb\_mysql\_2019-09-11\_backup.sql.gz"
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -629,6 +648,7 @@ integer
 1
 
 }
+```
 
 databaseMysqlMakeCopy
 ---------------------
@@ -657,6 +677,7 @@ integer
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -674,11 +695,13 @@ integer
 "mydb"
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -694,6 +717,7 @@ integer
 1
 
 }
+```
 
 databaseMysqlAccessList
 -----------------------
@@ -730,6 +754,7 @@ object
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -747,11 +772,13 @@ object
 "mydb"
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -775,6 +802,7 @@ object
 true
 
 }
+```
 
 "list":\[
 
@@ -819,6 +847,7 @@ integer
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -840,11 +869,13 @@ integer
 "127.0.0.2"
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -860,6 +891,7 @@ integer
 1
 
 }
+```
 
 databaseMysqlAccessDelete
 -------------------------
@@ -894,6 +926,7 @@ integer
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -915,11 +948,13 @@ integer
 "127.0.0.2"
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -935,6 +970,7 @@ integer
 1
 
 }
+```
 
 databaseMysqlDelete
 -------------------
@@ -963,6 +999,7 @@ integer
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -980,11 +1017,13 @@ integer
 "mydb"
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -1000,6 +1039,7 @@ integer
 1
 
 }
+```
 
 databasePgsqlCreate
 -------------------
@@ -1046,6 +1086,7 @@ integer
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -1075,11 +1116,13 @@ integer
 "тестовая БД"
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -1095,6 +1138,7 @@ integer
 1
 
 }
+```
 
 databasePgsqlDelete
 -------------------
@@ -1123,6 +1167,7 @@ integer
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -1140,11 +1185,13 @@ integer
 "mydb"
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -1160,6 +1207,7 @@ integer
 1
 
 }
+```
 
 databasePgsqlChangePass
 -----------------------
@@ -1194,6 +1242,7 @@ integer
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -1215,11 +1264,13 @@ integer
 "......"
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -1235,6 +1286,7 @@ integer
 1
 
 }
+```
 
 databaseEditComment
 -------------------
@@ -1275,6 +1327,7 @@ integer
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -1300,11 +1353,13 @@ integer
 "тестовая БД"
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -1320,6 +1375,7 @@ integer
 1
 
 }
+```
 
 getPmaUser
 ----------
@@ -1354,6 +1410,7 @@ object
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -1371,11 +1428,13 @@ object
 "mydb"
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -1405,5 +1464,6 @@ object
 "....."
 
 }
+```
 
 }

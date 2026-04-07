@@ -47,6 +47,7 @@ array
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -58,11 +59,13 @@ array
 "index"
 
 "params":{}
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -86,7 +89,9 @@ array
 "11"
 
 }
+```
 
+```json
 {
 
 "year":
@@ -98,7 +103,9 @@ array
 "12"
 
 }
+```
 
+```json
 {
 
 "year":
@@ -110,7 +117,9 @@ array
 "1"
 
 }
+```
 
+```json
 {
 
 "year":
@@ -122,7 +131,9 @@ array
 "2"
 
 }
+```
 
+```json
 {
 
 "year":
@@ -134,6 +145,7 @@ array
 "3"
 
 }
+```
 
 \]
 
@@ -184,6 +196,7 @@ array
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -209,11 +222,13 @@ array
 "null"
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -245,7 +260,9 @@ array
 0
 
 }
+```
 
+```json
 {
 
 "date":
@@ -261,7 +278,9 @@ array
 0
 
 }
+```
 
+```json
 {
 
 "date":
@@ -277,7 +296,9 @@ array
 0
 
 }
+```
 
+```json
 {
 
 "date":
@@ -293,7 +314,9 @@ array
 0
 
 }
+```
 
+```json
 {
 
 "date":
@@ -309,7 +332,9 @@ array
 0
 
 }
+```
 
+```json
 {
 
 "date":
@@ -325,7 +350,9 @@ array
 0
 
 }
+```
 
+```json
 {
 
 "date":
@@ -341,7 +368,9 @@ array
 0
 
 }
+```
 
+```json
 {
 
 "date":
@@ -357,7 +386,9 @@ array
 0
 
 }
+```
 
+```json
 {
 
 "date":
@@ -373,7 +404,9 @@ array
 0
 
 }
+```
 
+```json
 {
 
 "date":
@@ -389,7 +422,9 @@ array
 0
 
 }
+```
 
+```json
 {
 
 "date":
@@ -405,7 +440,9 @@ array
 0
 
 }
+```
 
+```json
 {
 
 "date":
@@ -421,7 +458,9 @@ array
 0
 
 }
+```
 
+```json
 {
 
 "date":
@@ -437,7 +476,9 @@ array
 0
 
 }
+```
 
+```json
 {
 
 "date":
@@ -453,7 +494,9 @@ array
 0
 
 }
+```
 
+```json
 {
 
 "date":
@@ -469,7 +512,9 @@ array
 0
 
 }
+```
 
+```json
 {
 
 "date":
@@ -485,7 +530,9 @@ array
 0
 
 }
+```
 
+```json
 {
 
 "date":
@@ -501,7 +548,9 @@ array
 0
 
 }
+```
 
+```json
 {
 
 "date":
@@ -517,7 +566,9 @@ array
 0
 
 }
+```
 
+```json
 {
 
 "date":
@@ -533,7 +584,9 @@ array
 0
 
 }
+```
 
+```json
 {
 
 "date":
@@ -549,7 +602,9 @@ array
 0
 
 }
+```
 
+```json
 {
 
 "date":
@@ -565,7 +620,9 @@ array
 0
 
 }
+```
 
+```json
 {
 
 "date":
@@ -581,7 +638,9 @@ array
 0
 
 }
+```
 
+```json
 {
 
 "date":
@@ -597,7 +656,9 @@ array
 0
 
 }
+```
 
+```json
 {
 
 "date":
@@ -613,7 +674,9 @@ array
 0
 
 }
+```
 
+```json
 {
 
 "date":
@@ -629,7 +692,9 @@ array
 0
 
 }
+```
 
+```json
 {
 
 "date":
@@ -645,7 +710,9 @@ array
 0
 
 }
+```
 
+```json
 {
 
 "date":
@@ -661,6 +728,7 @@ array
 0
 
 }
+```
 
 \]
 
@@ -688,7 +756,8 @@ array
 
 \]
 
-"csv":{
+"csv":```json
+{
 
 "mimetype":
 
@@ -705,6 +774,7 @@ array
 "loading\_lina199302\_6.csv"
 
 }
+```
 
 }
 

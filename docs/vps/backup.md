@@ -74,6 +74,7 @@ array
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -91,11 +92,13 @@ array
 "lnpetrov93\_vps\_2"
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -143,6 +146,7 @@ array
 "2023-03-13 13:40:03"
 
 }
+```
 
 \]
 
@@ -175,6 +179,7 @@ integer
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -192,11 +197,13 @@ integer
 "lnpetrov93\_vps\_2"
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -212,6 +219,7 @@ integer
 1
 
 }
+```
 
 create
 ------
@@ -240,6 +248,7 @@ integer
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -257,11 +266,13 @@ integer
 "lnpetrov93\_vps\_2"
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -277,6 +288,7 @@ integer
 1
 
 }
+```
 
 restore
 -------
@@ -311,6 +323,7 @@ integer
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -332,11 +345,13 @@ integer
 "b67d4085c72cca7fa909e275b3fd6b52-2023-03-13-13-37"
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -352,6 +367,7 @@ integer
 1
 
 }
+```
 
 attach
 ------
@@ -386,6 +402,7 @@ integer
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -407,11 +424,13 @@ integer
 "b67d4085c72cca7fa909e275b3fd6b52-2023-03-13-13-37"
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -427,6 +446,7 @@ integer
 1
 
 }
+```
 
 detach
 ------
@@ -461,6 +481,7 @@ integer
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -482,11 +503,13 @@ integer
 "b67d4085c72cca7fa909e275b3fd6b52-2023-03-13-13-37"
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -502,6 +525,7 @@ integer
 1
 
 }
+```
 
 remove
 ------
@@ -536,6 +560,7 @@ integer
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -557,11 +582,13 @@ integer
 "b67d4085c72cca7fa909e275b3fd6b52-2023-03-13-13-37"
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -577,6 +604,7 @@ integer
 1
 
 }
+```
 
 getSettings
 -----------
@@ -611,6 +639,7 @@ array
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -628,11 +657,13 @@ array
 "lnpetrov93\_vps\_2"
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -664,6 +695,7 @@ array
 ""
 
 }
+```
 
 \]
 
@@ -714,6 +746,7 @@ integer
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -743,11 +776,13 @@ integer
 "16"
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -763,3 +798,4 @@ integer
 1
 
 }
+```

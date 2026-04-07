@@ -132,6 +132,7 @@ object
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -143,11 +144,13 @@ object
 "index"
 
 "params":{}
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -199,6 +202,7 @@ object
 "10"
 
 }
+```
 
 "active":
 
@@ -262,6 +266,7 @@ true
 
 "endpoints":\[
 
+```json
 {
 
 "ip":
@@ -277,11 +282,13 @@ true
 "rw"
 
 }
+```
 
 \]
 
 "users":\[
 
+```json
 {
 
 "name":
@@ -289,11 +296,13 @@ true
 "test"
 
 }
+```
 
 \]
 
 "databases":\[
 
+```json
 {
 
 "name":
@@ -311,6 +320,7 @@ true
 ""
 
 }
+```
 
 \]
 
@@ -365,6 +375,7 @@ integer
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -382,11 +393,13 @@ integer
 true
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -402,6 +415,7 @@ true
 1
 
 }
+```
 
 getAvailableConfig
 ------------------
@@ -436,6 +450,7 @@ object
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -447,11 +462,13 @@ object
 "getAvailableConfig"
 
 "params":{}
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -489,10 +506,12 @@ object
 "40"
 
 }
+```
 
 \]
 
-"engines":{
+"engines":```json
+{
 
 "PostgreSQL":\[
 
@@ -507,7 +526,9 @@ object
 "13"
 
 }
+```
 
+```json
 {
 
 "name":
@@ -519,7 +540,9 @@ object
 "14"
 
 }
+```
 
+```json
 {
 
 "name":
@@ -531,11 +554,13 @@ object
 "15"
 
 }
+```
 
 \]
 
 "MySQL":\[
 
+```json
 {
 
 "name":
@@ -547,7 +572,9 @@ object
 "5.7"
 
 }
+```
 
+```json
 {
 
 "name":
@@ -559,12 +586,14 @@ object
 "8.0"
 
 }
+```
 
 \]
 
 }
 
-"kit":{
+"kit":```json
+{
 
 "cpu":{
 
@@ -601,7 +630,9 @@ NULL
 131
 
 }
+```
 
+```json
 {
 
 "start":
@@ -617,7 +648,9 @@ NULL
 164
 
 }
+```
 
+```json
 {
 
 "start":
@@ -633,12 +666,14 @@ NULL
 157
 
 }
+```
 
 \]
 
 }
 
-"memory":{
+"memory":```json
+{
 
 "start":
 
@@ -675,7 +710,9 @@ NULL
 28
 
 }
+```
 
+```json
 {
 
 "start":
@@ -691,7 +728,9 @@ NULL
 34
 
 }
+```
 
+```json
 {
 
 "start":
@@ -707,7 +746,9 @@ NULL
 35
 
 }
+```
 
+```json
 {
 
 "start":
@@ -723,12 +764,14 @@ NULL
 34
 
 }
+```
 
 \]
 
 }
 
-"storage":{
+"storage":```json
+{
 
 "start":
 
@@ -769,7 +812,9 @@ NULL
 7.5
 
 }
+```
 
+```json
 {
 
 "start":
@@ -785,7 +830,9 @@ NULL
 15
 
 }
+```
 
+```json
 {
 
 "start":
@@ -801,7 +848,9 @@ NULL
 9.5
 
 }
+```
 
+```json
 {
 
 "start":
@@ -817,7 +866,9 @@ NULL
 8.5
 
 }
+```
 
+```json
 {
 
 "start":
@@ -833,7 +884,9 @@ NULL
 9
 
 }
+```
 
+```json
 {
 
 "start":
@@ -849,6 +902,7 @@ NULL
 13.5
 
 }
+```
 
 \]
 
@@ -858,6 +912,7 @@ NULL
 
 "prices\_backup":\[
 
+```json
 {
 
 "start":
@@ -873,7 +928,9 @@ NULL
 0.5
 
 }
+```
 
+```json
 {
 
 "start":
@@ -889,7 +946,9 @@ NULL
 0.6
 
 }
+```
 
+```json
 {
 
 "start":
@@ -905,7 +964,9 @@ NULL
 0.65
 
 }
+```
 
+```json
 {
 
 "start":
@@ -921,6 +982,7 @@ NULL
 0.6
 
 }
+```
 
 \]
 
@@ -981,6 +1043,7 @@ integer
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -1010,11 +1073,13 @@ integer
 1
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -1030,6 +1095,7 @@ integer
 96
 
 }
+```
 
 getFirstOrderInfo
 -----------------
@@ -1080,6 +1146,7 @@ object
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -1091,11 +1158,13 @@ object
 "getFirstOrderInfo"
 
 "params":{}
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -1173,6 +1242,7 @@ true
 NULL
 
 }
+```
 
 }
 
@@ -1195,6 +1265,7 @@ integer
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -1206,11 +1277,13 @@ integer
 "removeFirst"
 
 "params":{}
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -1226,6 +1299,7 @@ integer
 1
 
 }
+```
 
 createInstance
 --------------
@@ -1302,6 +1376,7 @@ object
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -1335,6 +1410,7 @@ object
 "Pass\_ByTest1"
 
 }
+```
 
 \]
 
@@ -1346,7 +1422,8 @@ object
 
 "Тестовая управляемая база данных"
 
-"instanceOptions":{
+"instanceOptions":```json
+{
 
 "sync\_replicas":
 
@@ -1357,12 +1434,14 @@ object
 0
 
 }
+```
 
 "dbDisplayName":
 
 "тестовая база данных"
 
-"dbOptions":{
+"dbOptions":```json
+{
 
 "users":\[
 
@@ -1371,9 +1450,11 @@ object
 \]
 
 }
+```
 
 "databases":\[
 
+```json
 {
 
 "name":
@@ -1395,6 +1476,7 @@ object
 false
 
 }
+```
 
 \]
 
@@ -1404,6 +1486,7 @@ false
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -1429,6 +1512,7 @@ false
 "data":\[\]
 
 }
+```
 
 }
 
@@ -1491,6 +1575,7 @@ integer
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -1520,6 +1605,7 @@ integer
 "Pass\_ByTest1"
 
 }
+```
 
 \]
 
@@ -1531,7 +1617,8 @@ integer
 
 "Тестовая управляемая база данных измененная"
 
-"instanceOptions":{
+"instanceOptions":```json
+{
 
 "sync\_replicas":
 
@@ -1542,9 +1629,11 @@ integer
 0
 
 }
+```
 
 "databases":\[
 
+```json
 {
 
 "name":
@@ -1566,6 +1655,7 @@ integer
 false
 
 }
+```
 
 \]
 
@@ -1575,6 +1665,7 @@ false
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -1590,6 +1681,7 @@ false
 1
 
 }
+```
 
 removeInstance
 --------------
@@ -1618,6 +1710,7 @@ integer
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -1635,11 +1728,13 @@ integer
 "testuser\_dbaas\_1"
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -1655,6 +1750,7 @@ integer
 1
 
 }
+```
 
 deleteDatabase
 --------------
@@ -1689,6 +1785,7 @@ object
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -1710,11 +1807,13 @@ object
 "test1"
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -1740,6 +1839,7 @@ object
 "data":\[\]
 
 }
+```
 
 }
 
@@ -1772,6 +1872,7 @@ boolean
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -1797,6 +1898,7 @@ boolean
 "Pass\_ByTest1"
 
 }
+```
 
 \]
 
@@ -1806,6 +1908,7 @@ boolean
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -1821,3 +1924,4 @@ boolean
 true
 
 }
+```

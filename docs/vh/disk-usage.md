@@ -58,6 +58,7 @@ array
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -69,11 +70,13 @@ array
 "index"
 
 "params":{}
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -113,6 +116,7 @@ array
 36
 
 }
+```
 
 \]
 
@@ -139,6 +143,7 @@ object
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -150,11 +155,13 @@ object
 "getTasksInfo"
 
 "params":{}
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -176,6 +183,7 @@ object
 "2023-02-28 23:52:26"
 
 }
+```
 
 }
 
@@ -198,6 +206,7 @@ integer
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -209,11 +218,13 @@ integer
 "startTask"
 
 "params":{}
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -229,6 +240,7 @@ integer
 1
 
 }
+```
 
 getEmail
 --------
@@ -249,6 +261,7 @@ string
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -260,11 +273,13 @@ string
 "getEmail"
 
 "params":{}
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -280,6 +295,7 @@ string
 "test@gmail.com"
 
 }
+```
 
 changeEmail
 -----------
@@ -308,6 +324,7 @@ integer
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -325,11 +342,13 @@ integer
 "newtestemail@gmail.com"
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -345,3 +364,4 @@ integer
 1
 
 }
+```

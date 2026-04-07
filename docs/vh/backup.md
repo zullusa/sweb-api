@@ -60,6 +60,7 @@ array
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -71,11 +72,13 @@ array
 "getList"
 
 "params":{}
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -111,7 +114,9 @@ true
 false
 
 }
+```
 
+```json
 {
 
 "date":
@@ -135,7 +140,9 @@ true
 false
 
 }
+```
 
+```json
 {
 
 "date":
@@ -159,7 +166,9 @@ true
 false
 
 }
+```
 
+```json
 {
 
 "date":
@@ -183,7 +192,9 @@ true
 false
 
 }
+```
 
+```json
 {
 
 "date":
@@ -207,7 +218,9 @@ true
 false
 
 }
+```
 
+```json
 {
 
 "date":
@@ -231,7 +244,9 @@ true
 false
 
 }
+```
 
+```json
 {
 
 "date":
@@ -255,7 +270,9 @@ true
 false
 
 }
+```
 
+```json
 {
 
 "date":
@@ -279,7 +296,9 @@ true
 false
 
 }
+```
 
+```json
 {
 
 "date":
@@ -303,6 +322,7 @@ true
 false
 
 }
+```
 
 \]
 
@@ -327,6 +347,7 @@ integer
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -338,11 +359,13 @@ integer
 "makeAccountCopy"
 
 "params":{}
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -358,6 +381,7 @@ integer
 1
 
 }
+```
 
 restoreFiles
 ------------
@@ -392,6 +416,7 @@ integer
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -421,11 +446,13 @@ integer
 \]
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -441,6 +468,7 @@ integer
 1
 
 }
+```
 
 downloadFile
 ------------
@@ -483,6 +511,7 @@ array
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -512,11 +541,13 @@ array
 \]
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -548,6 +579,7 @@ array
 "test\_mysql57\_2023-06-07\_16-00.sql.gz"
 
 }
+```
 
 }
 
@@ -592,6 +624,7 @@ array
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -613,11 +646,13 @@ array
 "/"
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -645,7 +680,9 @@ false
 "0 B"
 
 }
+```
 
+```json
 {
 
 "name":
@@ -661,7 +698,9 @@ true
 "4 KB"
 
 }
+```
 
+```json
 {
 
 "name":
@@ -677,6 +716,7 @@ false
 "309,89 KB"
 
 }
+```
 
 \]
 
@@ -717,6 +757,7 @@ array
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -738,11 +779,13 @@ array
 "/"
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -766,6 +809,7 @@ array
 true
 
 }
+```
 
 \]
 
@@ -804,6 +848,7 @@ integer
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -833,11 +878,13 @@ integer
 \]
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -853,6 +900,7 @@ integer
 1
 
 }
+```
 
 receiveMysql
 ------------
@@ -887,6 +935,7 @@ integer
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -910,11 +959,13 @@ integer
 \]
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -930,6 +981,7 @@ integer
 1
 
 }
+```
 
 restoreMysql
 ------------
@@ -964,6 +1016,7 @@ integer
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -987,11 +1040,13 @@ integer
 \]
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -1007,3 +1062,4 @@ integer
 1
 
 }
+```

@@ -106,6 +106,7 @@ object
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -135,11 +136,13 @@ object
 "desc"
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -177,7 +180,9 @@ object
 true
 
 }
+```
 
+```json
 {
 
 "id":
@@ -201,10 +206,12 @@ true
 true
 
 }
+```
 
 \]
 
-"filterInfo":{
+"filterInfo":```json
+{
 
 "page":
 
@@ -227,6 +234,7 @@ true
 2
 
 }
+```
 
 }
 
@@ -263,6 +271,7 @@ array
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -274,11 +283,13 @@ array
 "getAllContacts"
 
 "params":{}
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -318,7 +329,9 @@ false
 true
 
 }
+```
 
+```json
 {
 
 "id":
@@ -346,7 +359,9 @@ true
 true
 
 }
+```
 
+```json
 {
 
 "id":
@@ -374,6 +389,7 @@ true
 false
 
 }
+```
 
 \]
 
@@ -418,6 +434,7 @@ integer
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -443,11 +460,13 @@ integer
 "тест"
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -463,6 +482,7 @@ integer
 1
 
 }
+```
 
 editContact
 -----------
@@ -503,6 +523,7 @@ integer
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -528,11 +549,13 @@ integer
 "тест"
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -548,6 +571,7 @@ integer
 1
 
 }
+```
 
 addEmail
 --------
@@ -582,6 +606,7 @@ integer
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -603,11 +628,13 @@ integer
 "тест"
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -623,6 +650,7 @@ integer
 1
 
 }
+```
 
 editEmail
 ---------
@@ -663,6 +691,7 @@ integer
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -688,11 +717,13 @@ integer
 "тест"
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -708,6 +739,7 @@ integer
 1
 
 }
+```
 
 addPhone
 --------
@@ -742,6 +774,7 @@ integer
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -763,11 +796,13 @@ integer
 "тест"
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -783,6 +818,7 @@ integer
 1
 
 }
+```
 
 editPhone
 ---------
@@ -823,6 +859,7 @@ integer
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -848,11 +885,13 @@ integer
 "тест"
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -868,6 +907,7 @@ integer
 1
 
 }
+```
 
 deleteContact
 -------------
@@ -896,6 +936,7 @@ integer
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -913,11 +954,13 @@ integer
 "1"
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -933,6 +976,7 @@ integer
 1
 
 }
+```
 
 deleteContacts
 --------------
@@ -961,6 +1005,7 @@ array
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -982,11 +1027,13 @@ array
 \]
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -1002,6 +1049,7 @@ array
 1
 
 }
+```
 
 addTelegram
 -----------
@@ -1030,6 +1078,7 @@ integer
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -1047,11 +1096,13 @@ integer
 "тест"
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -1067,6 +1118,7 @@ integer
 1
 
 }
+```
 
 requestTelegramVerifyCode
 -------------------------
@@ -1095,6 +1147,7 @@ string
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -1112,11 +1165,13 @@ string
 "1"
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -1132,6 +1187,7 @@ string
 "611021"
 
 }
+```
 
 isVerified
 ----------
@@ -1160,6 +1216,7 @@ boolean
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -1177,11 +1234,13 @@ boolean
 "1"
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -1197,6 +1256,7 @@ boolean
 true
 
 }
+```
 
 editTelegram
 ------------
@@ -1231,6 +1291,7 @@ integer
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -1252,11 +1313,13 @@ integer
 "тест"
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -1272,6 +1335,7 @@ integer
 1
 
 }
+```
 
 verifyContact
 -------------
@@ -1306,6 +1370,7 @@ integer
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -1327,11 +1392,13 @@ integer
 "611021"
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -1347,3 +1414,4 @@ integer
 1
 
 }
+```

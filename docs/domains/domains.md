@@ -150,6 +150,7 @@ array
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -191,11 +192,13 @@ array
 false
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -267,6 +270,7 @@ false
 "test549849.ru"
 
 }
+```
 
 \]
 
@@ -313,6 +317,7 @@ array
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -330,11 +335,13 @@ array
 "test549849.ru"
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -358,6 +365,7 @@ array
 "\*.test549849.ru"
 
 }
+```
 
 \]
 
@@ -432,6 +440,7 @@ object
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -449,11 +458,13 @@ object
 "test549849.ru"
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -521,6 +532,7 @@ false
 NULL
 
 }
+```
 
 "reg\_price":
 
@@ -591,6 +603,7 @@ integer
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -612,11 +625,13 @@ integer
 "balance"
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -632,6 +647,7 @@ integer
 1
 
 }
+```
 
 getAvailablePackages
 --------------------
@@ -678,6 +694,7 @@ array
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -695,11 +712,13 @@ array
 "testswebinnna.ru, testswebinnna.shop"
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -751,7 +770,9 @@ true
 "testswebinnna.ru"
 
 }
+```
 
+```json
 {
 
 "name":
@@ -763,6 +784,7 @@ true
 "testswebinnna.shop"
 
 }
+```
 
 \]
 
@@ -803,6 +825,7 @@ integer
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -820,11 +843,13 @@ integer
 "testswebinnna.ru, testswebinnna.shop"
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -840,6 +865,7 @@ integer
 1
 
 }
+```
 
 reg
 ---
@@ -904,6 +930,7 @@ integer
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -945,11 +972,13 @@ integer
 false
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -965,6 +994,7 @@ false
 1
 
 }
+```
 
 move
 ----
@@ -1005,6 +1035,7 @@ integer
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -1030,11 +1061,13 @@ integer
 "/тест"
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -1050,6 +1083,7 @@ integer
 1
 
 }
+```
 
 moveList
 --------
@@ -1078,6 +1112,7 @@ integer
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -1107,7 +1142,9 @@ integer
 "/home/example"
 
 }
+```
 
+```json
 {
 
 "fqdn":
@@ -1123,6 +1160,7 @@ integer
 "/home/test"
 
 }
+```
 
 \]
 
@@ -1132,6 +1170,7 @@ integer
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -1147,6 +1186,7 @@ integer
 1
 
 }
+```
 
 changeProlong
 -------------
@@ -1181,6 +1221,7 @@ integer
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -1202,11 +1243,13 @@ integer
 "bonus\_money"
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -1222,6 +1265,7 @@ integer
 1
 
 }
+```
 
 changeProlongList
 -----------------
@@ -1250,6 +1294,7 @@ integer
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -1275,7 +1320,9 @@ integer
 "bonus\_money"
 
 }
+```
 
+```json
 {
 
 "domain":
@@ -1287,6 +1334,7 @@ integer
 "bonus\_money"
 
 }
+```
 
 \]
 
@@ -1296,6 +1344,7 @@ integer
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -1311,6 +1360,7 @@ integer
 1
 
 }
+```
 
 remove
 ------
@@ -1339,6 +1389,7 @@ integer
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -1356,11 +1407,13 @@ integer
 "test549849.ru"
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -1376,6 +1429,7 @@ integer
 1
 
 }
+```
 
 removeList
 ----------
@@ -1404,6 +1458,7 @@ integer
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -1421,11 +1476,13 @@ integer
 "testswebinnna.ru, testswebinnna.shop"
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -1441,6 +1498,7 @@ integer
 1
 
 }
+```
 
 prolong
 -------
@@ -1475,6 +1533,7 @@ integer
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -1496,11 +1555,13 @@ integer
 "balance"
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -1516,6 +1577,7 @@ integer
 1
 
 }
+```
 
 prolongList
 -----------
@@ -1548,6 +1610,7 @@ object
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -1565,11 +1628,13 @@ object
 "testswebinnna.ru, testswebinnna.shop"
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -1595,6 +1660,7 @@ object
 "data":\[\]
 
 }
+```
 
 }
 
@@ -1627,6 +1693,7 @@ integer
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -1644,11 +1711,13 @@ integer
 "test549849.ru"
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -1664,6 +1733,7 @@ integer
 1
 
 }
+```
 
 priceForRegistration
 --------------------
@@ -1692,6 +1762,7 @@ string
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -1709,11 +1780,13 @@ string
 "test549849.ru"
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -1729,6 +1802,7 @@ string
 199
 
 }
+```
 
 removeSubdomain
 ---------------
@@ -1763,6 +1837,7 @@ integer
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -1784,11 +1859,13 @@ integer
 "test1"
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -1804,6 +1881,7 @@ integer
 1
 
 }
+```
 
 createSubdomain
 ---------------
@@ -1844,6 +1922,7 @@ integer
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -1869,11 +1948,13 @@ integer
 "/тест"
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -1889,6 +1970,7 @@ integer
 1
 
 }
+```
 
 setRedirectVh
 -------------
@@ -1923,6 +2005,7 @@ integer
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -1944,11 +2027,13 @@ integer
 "https://testredirect.ru"
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -1964,6 +2049,7 @@ integer
 1
 
 }
+```
 
 getRedirectVh
 -------------
@@ -1992,6 +2078,7 @@ string
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -2009,11 +2096,13 @@ string
 "test549849.ru"
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -2029,3 +2118,4 @@ string
 "https://testgetredirect.ru"
 
 }
+```

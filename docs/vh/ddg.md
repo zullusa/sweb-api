@@ -86,6 +86,7 @@ array
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -115,11 +116,13 @@ array
 "ASC"
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -159,7 +162,9 @@ array
 "active\_blocked"
 
 }
+```
 
+```json
 {
 
 "fqdn":
@@ -187,7 +192,9 @@ NULL
 "active"
 
 }
+```
 
+```json
 {
 
 "fqdn":
@@ -215,6 +222,7 @@ NULL
 "disabled"
 
 }
+```
 
 \]
 
@@ -239,6 +247,7 @@ integer
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -250,11 +259,13 @@ integer
 "countAllDomains"
 
 "params":{}
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -270,6 +281,7 @@ integer
 21
 
 }
+```
 
 enable
 ------
@@ -304,6 +316,7 @@ object
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -321,11 +334,13 @@ object
 "test.ru"
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -355,6 +370,7 @@ false
 "77.222.44.8"
 
 }
+```
 
 }
 
@@ -391,6 +407,7 @@ object
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -408,11 +425,13 @@ object
 "test.ru"
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -442,6 +461,7 @@ false
 "10.07.24"
 
 }
+```
 
 }
 
@@ -474,6 +494,7 @@ object
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -485,11 +506,13 @@ object
 "enableInfo"
 
 "params":{}
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -525,6 +548,7 @@ true
 true
 
 }
+```
 
 "isOnOurNs":
 
@@ -532,6 +556,7 @@ true
 
 }
 
+```json
 {
 
 "fqdn":
@@ -551,6 +576,7 @@ NULL
 false
 
 }
+```
 
 \]
 
@@ -583,6 +609,7 @@ object
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -594,11 +621,13 @@ object
 "priceWidget"
 
 "params":{}
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -620,6 +649,7 @@ object
 "990"
 
 }
+```
 
 }
 
@@ -642,6 +672,7 @@ number
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -653,11 +684,13 @@ number
 "getPrice"
 
 "params":{}
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -673,3 +706,4 @@ number
 290
 
 }
+```

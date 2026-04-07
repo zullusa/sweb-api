@@ -97,6 +97,7 @@ array
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -108,11 +109,13 @@ array
 "index"
 
 "params":{}
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -178,8 +181,10 @@ array
 12
 
 }
+```
 
-"real":{
+"real":```json
+{
 
 "quota":
 
@@ -234,6 +239,7 @@ array
 false
 
 }
+```
 
 }
 
@@ -276,6 +282,7 @@ array
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -287,11 +294,13 @@ array
 "serverInfo"
 
 "params":{}
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -359,7 +368,9 @@ array
 32
 
 }
+```
 
+```json
 {
 
 "type":
@@ -387,7 +398,9 @@ array
 23
 
 }
+```
 
+```json
 {
 
 "type":
@@ -415,7 +428,9 @@ array
 22
 
 }
+```
 
+```json
 {
 
 "type":
@@ -443,7 +458,9 @@ array
 21
 
 }
+```
 
+```json
 {
 
 "type":
@@ -471,7 +488,9 @@ array
 12
 
 }
+```
 
+```json
 {
 
 "type":
@@ -499,7 +518,9 @@ array
 11
 
 }
+```
 
+```json
 {
 
 "type":
@@ -527,7 +548,9 @@ array
 10
 
 }
+```
 
+```json
 {
 
 "type":
@@ -555,7 +578,9 @@ array
 9
 
 }
+```
 
+```json
 {
 
 "type":
@@ -583,7 +608,9 @@ array
 8
 
 }
+```
 
+```json
 {
 
 "type":
@@ -611,7 +638,9 @@ array
 7
 
 }
+```
 
+```json
 {
 
 "type":
@@ -639,7 +668,9 @@ array
 6
 
 }
+```
 
+```json
 {
 
 "type":
@@ -667,7 +698,9 @@ array
 5
 
 }
+```
 
+```json
 {
 
 "type":
@@ -695,7 +728,9 @@ array
 4
 
 }
+```
 
+```json
 {
 
 "type":
@@ -719,7 +754,9 @@ array
 2
 
 }
+```
 
+```json
 {
 
 "type":
@@ -743,6 +780,7 @@ array
 1
 
 }
+```
 
 \]
 

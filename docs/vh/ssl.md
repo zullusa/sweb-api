@@ -117,6 +117,7 @@ object
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -146,11 +147,13 @@ object
 "desc"
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -208,7 +211,9 @@ false
 NULL
 
 }
+```
 
+```json
 {
 
 "id":
@@ -252,10 +257,12 @@ false
 NULL
 
 }
+```
 
 \]
 
-"filterInfo":{
+"filterInfo":```json
+{
 
 "page":
 
@@ -278,6 +285,7 @@ NULL
 6
 
 }
+```
 
 }
 
@@ -320,6 +328,7 @@ array
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -331,11 +340,13 @@ array
 "getOrderList"
 
 "params":{}
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -399,6 +410,7 @@ array
 0
 
 }
+```
 
 "prices\_old":
 
@@ -410,6 +422,7 @@ NULL
 
 }
 
+```json
 {
 
 "id":
@@ -461,6 +474,7 @@ NULL
 "4100.00"
 
 }
+```
 
 "prices\_old":
 
@@ -515,6 +529,7 @@ array
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -536,11 +551,13 @@ array
 "......."
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -568,6 +585,7 @@ array
 "my\_cert.zip"
 
 }
+```
 
 }
 
@@ -604,6 +622,7 @@ integer
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -625,11 +644,13 @@ integer
 true
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -645,6 +666,7 @@ true
 1
 
 }
+```
 
 removeCertificate
 -----------------
@@ -673,6 +695,7 @@ integer
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -690,11 +713,13 @@ integer
 466893
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -710,6 +735,7 @@ integer
 1
 
 }
+```
 
 getProlongInfo
 --------------
@@ -768,6 +794,7 @@ object
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -785,11 +812,13 @@ object
 466893
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -845,22 +874,27 @@ NULL
 "N"
 
 }
+```
 
-"prices":{
+"prices":```json
+{
 
 "12":
 
 "4100.00"
 
 }
+```
 
-"ids":{
+"ids":```json
+{
 
 "12":
 
 "27"
 
 }
+```
 
 "title":
 
@@ -907,6 +941,7 @@ integer
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -928,11 +963,13 @@ integer
 987234
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -948,6 +985,7 @@ integer
 1
 
 }
+```
 
 installLetsEncrypt
 ------------------
@@ -1000,6 +1038,7 @@ integer
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -1033,11 +1072,13 @@ integer
 "dns"
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -1053,3 +1094,4 @@ integer
 1
 
 }
+```

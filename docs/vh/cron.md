@@ -85,6 +85,7 @@ integer
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -122,11 +123,13 @@ integer
 "test"
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -142,6 +145,7 @@ integer
 1
 
 }
+```
 
 editTask
 --------
@@ -206,6 +210,7 @@ integer
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -247,11 +252,13 @@ integer
 "test"
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -267,6 +274,7 @@ integer
 1
 
 }
+```
 
 removeTask
 ----------
@@ -295,6 +303,7 @@ integer
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -312,11 +321,13 @@ integer
 "30 0 31 1 1 test"
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -332,6 +343,7 @@ integer
 1
 
 }
+```
 
 getTasks
 --------
@@ -366,6 +378,7 @@ array
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -377,11 +390,13 @@ array
 "getTasks"
 
 "params":{}
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -429,6 +444,7 @@ array
 "30%2012%201%2012%207%20test"
 
 }
+```
 
 \]
 

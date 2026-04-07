@@ -55,6 +55,7 @@ integer
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -72,11 +73,13 @@ integer
 1
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -92,6 +95,7 @@ integer
 1
 
 }
+```
 
 disable
 -------
@@ -120,6 +124,7 @@ integer
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -137,11 +142,13 @@ integer
 1
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -157,6 +164,7 @@ integer
 1
 
 }
+```
 
 change
 ------
@@ -185,6 +193,7 @@ integer
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -202,11 +211,13 @@ integer
 1
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -222,6 +233,7 @@ integer
 1
 
 }
+```
 
 plans
 -----
@@ -250,6 +262,7 @@ array
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -261,11 +274,13 @@ array
 "plans"
 
 "params":{}
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -301,7 +316,9 @@ array
 30
 
 }
+```
 
+```json
 {
 
 "id":
@@ -325,7 +342,9 @@ array
 150
 
 }
+```
 
+```json
 {
 
 "id":
@@ -349,6 +368,7 @@ array
 390
 
 }
+```
 
 \]
 

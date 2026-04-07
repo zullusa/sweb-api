@@ -111,6 +111,7 @@ array
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -128,11 +129,13 @@ array
 "vhp\*\*\*\*\_vps\_1"
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -178,11 +181,13 @@ array
 140
 
 }
+```
 
 \]
 
 "protected\_ips":\[
 
+```json
 {
 
 "ip":
@@ -218,6 +223,7 @@ array
 50
 
 }
+```
 
 \]
 
@@ -225,7 +231,8 @@ array
 
 "local\_ip":\[\]
 
-"vps":{
+"vps":```json
+{
 
 "billingId":
 
@@ -244,6 +251,7 @@ NULL
 2
 
 }
+```
 
 }
 
@@ -302,6 +310,7 @@ array
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -313,11 +322,13 @@ array
 "getAllIpList"
 
 "params":{}
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -395,7 +406,9 @@ NULL
 NULL
 
 }
+```
 
+```json
 {
 
 "ip":
@@ -455,6 +468,7 @@ NULL
 "dyasyuc384\_vps\_1"
 
 }
+```
 
 \]
 
@@ -476,6 +490,7 @@ NULL
 
 }
 
+```json
 {
 
 "ip":
@@ -541,6 +556,7 @@ NULL
 50
 
 }
+```
 
 \]
 
@@ -571,6 +587,7 @@ integer
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -582,11 +599,13 @@ integer
 "getOrderInfo"
 
 "params":{}
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -616,6 +635,7 @@ integer
 7
 
 }
+```
 
 }
 
@@ -652,6 +672,7 @@ boolean
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -677,11 +698,13 @@ boolean
 \]
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -697,6 +720,7 @@ boolean
 true
 
 }
+```
 
 removeProtected
 ---------------
@@ -725,6 +749,7 @@ integer
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -742,11 +767,13 @@ integer
 "127.0.105.54"
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -762,6 +789,7 @@ integer
 false
 
 }
+```
 
 updateProtected
 ---------------
@@ -796,6 +824,7 @@ boolean
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -817,11 +846,13 @@ boolean
 1
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -837,6 +868,7 @@ boolean
 true
 
 }
+```
 
 moveProtected
 -------------
@@ -871,6 +903,7 @@ boolean
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -892,11 +925,13 @@ boolean
 "dyasyuc584\_vps\_1"
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -912,6 +947,7 @@ boolean
 true
 
 }
+```
 
 add
 ---
@@ -946,6 +982,7 @@ integer
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -967,11 +1004,13 @@ integer
 "1"
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -987,6 +1026,7 @@ integer
 1
 
 }
+```
 
 addLocal
 --------
@@ -1015,6 +1055,7 @@ integer
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -1032,11 +1073,13 @@ integer
 "dyasyuc584\_vps\_1"
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -1052,6 +1095,7 @@ integer
 1
 
 }
+```
 
 removeLocal
 -----------
@@ -1080,6 +1124,7 @@ integer
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -1097,11 +1142,13 @@ integer
 "dyasyuc584\_vps\_1"
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -1117,6 +1164,7 @@ integer
 1
 
 }
+```
 
 remove
 ------
@@ -1151,6 +1199,7 @@ integer
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -1172,11 +1221,13 @@ integer
 "127.0.105.54"
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -1192,6 +1243,7 @@ integer
 1
 
 }
+```
 
 move
 ----
@@ -1226,6 +1278,7 @@ integer
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -1247,11 +1300,13 @@ integer
 "dyasyuc584\_vps\_1"
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -1267,6 +1322,7 @@ integer
 1
 
 }
+```
 
 editPtr
 -------
@@ -1301,6 +1357,7 @@ integer
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -1322,11 +1379,13 @@ integer
 "192-168-122-192.vps-ptr.clients.spacewb.ru."
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -1342,6 +1401,7 @@ integer
 1
 
 }
+```
 
 getPtr
 ------
@@ -1370,6 +1430,7 @@ string
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -1387,11 +1448,13 @@ string
 "127.0.105.54"
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -1407,3 +1470,4 @@ string
 "192-168-122-192.vps-ptr.clients.spacewb.ru."
 
 }
+```

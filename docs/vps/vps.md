@@ -135,6 +135,7 @@ array
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -146,11 +147,13 @@ array
 "index"
 
 "params":{}
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -290,6 +293,7 @@ NULL
 "10-15"
 
 }
+```
 
 \]
 
@@ -370,6 +374,7 @@ array
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -381,11 +386,13 @@ array
 "getFirstOrderInfo"
 
 "params":{}
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -479,6 +486,7 @@ false
 \]
 
 }
+```
 
 }
 
@@ -505,6 +513,7 @@ integer
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -516,11 +525,13 @@ integer
 "createEnable"
 
 "params":{}
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -536,6 +547,7 @@ integer
 1
 
 }
+```
 
 getAvailableConfig
 ------------------
@@ -792,6 +804,7 @@ array
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -803,11 +816,13 @@ array
 "getAvailableConfig"
 
 "params":{}
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -913,7 +928,9 @@ NULL
 239
 
 }
+```
 
+```json
 {
 
 "id":
@@ -1005,7 +1022,9 @@ NULL
 439
 
 }
+```
 
+```json
 {
 
 "id":
@@ -1097,11 +1116,13 @@ NULL
 2639
 
 }
+```
 
 \]
 
 "selectOs":\[
 
+```json
 {
 
 "id":
@@ -1161,7 +1182,9 @@ NULL
 \]
 
 }
+```
 
+```json
 {
 
 "id":
@@ -1205,7 +1228,9 @@ NULL
 \]
 
 }
+```
 
+```json
 {
 
 "id":
@@ -1247,11 +1272,13 @@ NULL
 \]
 
 }
+```
 
 \]
 
 "selectPanel":\[
 
+```json
 {
 
 "id":
@@ -1303,7 +1330,9 @@ NULL
 0
 
 }
+```
 
+```json
 {
 
 "id":
@@ -1355,7 +1384,9 @@ NULL
 300
 
 }
+```
 
+```json
 {
 
 "id":
@@ -1407,7 +1438,9 @@ NULL
 0
 
 }
+```
 
+```json
 {
 
 "id":
@@ -1459,7 +1492,9 @@ NULL
 0
 
 }
+```
 
+```json
 {
 
 "id":
@@ -1511,7 +1546,9 @@ NULL
 0
 
 }
+```
 
+```json
 {
 
 "id":
@@ -1563,11 +1600,13 @@ NULL
 0
 
 }
+```
 
 \]
 
 "osPanel":\[
 
+```json
 {
 
 "distributive":
@@ -1615,7 +1654,9 @@ NULL
 0
 
 }
+```
 
+```json
 {
 
 "distributive":
@@ -1661,11 +1702,13 @@ NULL
 0
 
 }
+```
 
 \]
 
 "datacenters":\[
 
+```json
 {
 
 "id":
@@ -1685,7 +1728,9 @@ NULL
 "Дата-центр в СПБ"
 
 }
+```
 
+```json
 {
 
 "id":
@@ -1705,11 +1750,13 @@ NULL
 "Дата-центр в Москве"
 
 }
+```
 
 \]
 
 "categories":\[
 
+```json
 {
 
 "id":
@@ -1729,7 +1776,9 @@ NULL
 "1"
 
 }
+```
 
+```json
 {
 
 "id":
@@ -1749,7 +1798,9 @@ NULL
 "2"
 
 }
+```
 
+```json
 {
 
 "id":
@@ -1769,7 +1820,9 @@ NULL
 "3"
 
 }
+```
 
+```json
 {
 
 "id":
@@ -1789,10 +1842,12 @@ NULL
 "4"
 
 }
+```
 
 \]
 
-"kit":{
+"kit":```json
+{
 
 "cpuCores":{
 
@@ -1813,8 +1868,10 @@ NULL
 110
 
 }
+```
 
-"ram":{
+"ram":```json
+{
 
 "values":\[
 
@@ -1861,8 +1918,10 @@ NULL
 115
 
 }
+```
 
-"volumeDisk":{
+"volumeDisk":```json
+{
 
 "start":
 
@@ -1885,6 +1944,7 @@ NULL
 1.5
 
 }
+```
 
 "categoryId":
 
@@ -1892,7 +1952,8 @@ NULL
 
 }
 
-"kit\_turbo":{
+"kit\_turbo":```json
+{
 
 "cpuCores":{
 
@@ -1913,8 +1974,10 @@ NULL
 530
 
 }
+```
 
-"ram":{
+"ram":```json
+{
 
 "start":
 
@@ -1933,8 +1996,10 @@ NULL
 140
 
 }
+```
 
-"volumeDisk":{
+"volumeDisk":```json
+{
 
 "start":
 
@@ -1957,6 +2022,7 @@ NULL
 3
 
 }
+```
 
 "categoryId":
 
@@ -1964,7 +2030,8 @@ NULL
 
 }
 
-"kit\_hdd":{
+"kit\_hdd":```json
+{
 
 "cpuCores":{
 
@@ -1985,8 +2052,10 @@ NULL
 530
 
 }
+```
 
-"ram":{
+"ram":```json
+{
 
 "start":
 
@@ -2005,8 +2074,10 @@ NULL
 160
 
 }
+```
 
-"volumeDisk":{
+"volumeDisk":```json
+{
 
 "start":
 
@@ -2025,6 +2096,7 @@ NULL
 2
 
 }
+```
 
 "categoryId":
 
@@ -2069,6 +2141,7 @@ string
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -2090,11 +2163,13 @@ string
 4
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -2110,6 +2185,7 @@ string
 "vhp\*\*\*\*\_vps\_2"
 
 }
+```
 
 createFirst
 -----------
@@ -2210,6 +2286,7 @@ string
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -2257,11 +2334,13 @@ true
 \]
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -2277,6 +2356,7 @@ true
 "vhp\*\*\*\*\_vps\_1"
 
 }
+```
 
 create
 ------
@@ -2371,6 +2451,7 @@ string
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -2424,11 +2505,13 @@ string
 \]
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -2444,6 +2527,7 @@ string
 "vhp\*\*\*\*\_vps\_2"
 
 }
+```
 
 rename
 ------
@@ -2478,6 +2562,7 @@ integer
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -2499,11 +2584,13 @@ integer
 "hestiaVPS"
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -2519,6 +2606,7 @@ integer
 1
 
 }
+```
 
 isRunning
 ---------
@@ -2547,6 +2635,7 @@ integer
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -2564,11 +2653,13 @@ integer
 "vhp\*\*\*\*\_vps\_1"
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -2584,6 +2675,7 @@ integer
 1
 
 }
+```
 
 remove
 ------
@@ -2612,6 +2704,7 @@ integer
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -2629,11 +2722,13 @@ integer
 "vhp\*\*\*\*\_vps\_1"
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -2649,6 +2744,7 @@ integer
 1
 
 }
+```
 
 removeFirst
 -----------
@@ -2669,6 +2765,7 @@ integer
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -2680,11 +2777,13 @@ integer
 "removeFirst"
 
 "params":{}
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -2700,6 +2799,7 @@ integer
 1
 
 }
+```
 
 load
 ----
@@ -2756,6 +2856,7 @@ array
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -2789,11 +2890,13 @@ array
 640
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -2817,6 +2920,7 @@ array
 "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"
 
 }
+```
 
 }
 
@@ -2865,6 +2969,7 @@ integer
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -2894,11 +2999,13 @@ integer
 1
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -2914,6 +3021,7 @@ integer
 124
 
 }
+```
 
 changePlan
 ----------
@@ -2948,6 +3056,7 @@ integer
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -2969,11 +3078,13 @@ integer
 4
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -2989,6 +3100,7 @@ integer
 1
 
 }
+```
 
 powerOn
 -------
@@ -3017,6 +3129,7 @@ integer
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -3034,11 +3147,13 @@ integer
 "vhp\*\*\*\*\_vps\_1"
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -3054,6 +3169,7 @@ integer
 1
 
 }
+```
 
 powerOff
 --------
@@ -3082,6 +3198,7 @@ integer
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -3099,11 +3216,13 @@ integer
 "vhp\*\*\*\*\_vps\_1"
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -3119,6 +3238,7 @@ integer
 1
 
 }
+```
 
 reboot
 ------
@@ -3147,6 +3267,7 @@ integer
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -3164,11 +3285,13 @@ integer
 "vhp\*\*\*\*\_vps\_1"
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -3184,6 +3307,7 @@ integer
 1
 
 }
+```
 
 getCurrentAction
 ----------------
@@ -3212,6 +3336,7 @@ string
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -3229,11 +3354,13 @@ string
 "vhp\*\*\*\*\_vps\_1"
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -3249,6 +3376,7 @@ string
 "start"
 
 }
+```
 
 reinstallOs
 -----------
@@ -3283,6 +3411,7 @@ integer
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -3304,11 +3433,13 @@ integer
 32
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -3324,6 +3455,7 @@ integer
 1
 
 }
+```
 
 logs
 ----
@@ -3358,6 +3490,7 @@ array
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -3375,11 +3508,13 @@ array
 "vhp\*\*\*\*\_vps\_1"
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -3411,7 +3546,9 @@ array
 "2023-03-15 13:43:03"
 
 }
+```
 
+```json
 {
 
 "type":
@@ -3431,7 +3568,9 @@ array
 "2023-03-15 13:41:03"
 
 }
+```
 
+```json
 {
 
 "type":
@@ -3451,7 +3590,9 @@ array
 "2023-03-13 16:11:03"
 
 }
+```
 
+```json
 {
 
 "type":
@@ -3471,7 +3612,9 @@ array
 "2023-03-13 16:05:03"
 
 }
+```
 
+```json
 {
 
 "type":
@@ -3491,7 +3634,9 @@ array
 "2023-03-13 15:50:03"
 
 }
+```
 
+```json
 {
 
 "type":
@@ -3511,6 +3656,7 @@ array
 "2023-03-13 15:15:05"
 
 }
+```
 
 \]
 

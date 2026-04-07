@@ -53,6 +53,7 @@ integer
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -70,11 +71,13 @@ integer
 "24"
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -90,6 +93,7 @@ integer
 1
 
 }
+```
 
 sshOff
 ------
@@ -110,6 +114,7 @@ integer
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -121,11 +126,13 @@ integer
 "sshOff"
 
 "params":{}
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -141,3 +148,4 @@ integer
 1
 
 }
+```

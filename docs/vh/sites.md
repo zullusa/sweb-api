@@ -91,6 +91,7 @@ array
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -116,11 +117,13 @@ array
 "САЙТ"
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -180,7 +183,9 @@ false
 false
 
 }
+```
 
+```json
 {
 
 "id":
@@ -228,6 +233,7 @@ false
 false
 
 }
+```
 
 \]
 
@@ -286,6 +292,7 @@ object
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -303,11 +310,13 @@ object
 "/dir"
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -377,6 +386,7 @@ false
 "program":\[\]
 
 }
+```
 
 }
 
@@ -431,6 +441,7 @@ integer
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -464,11 +475,13 @@ integer
 true
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -484,6 +497,7 @@ true
 1
 
 }
+```
 
 edit
 ----
@@ -524,6 +538,7 @@ integer
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -549,11 +564,13 @@ integer
 "newDir"
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -569,6 +586,7 @@ integer
 1
 
 }
+```
 
 del
 ---
@@ -597,6 +615,7 @@ integer
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -614,11 +633,13 @@ integer
 "/dir"
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -634,6 +655,7 @@ integer
 1
 
 }
+```
 
 changeDomainSite
 ----------------
@@ -674,6 +696,7 @@ integer
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -699,11 +722,13 @@ integer
 "subdomain"
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -719,6 +744,7 @@ integer
 1
 
 }
+```
 
 getBackEndsList
 ---------------
@@ -741,6 +767,7 @@ array
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -752,11 +779,13 @@ array
 "getBackEndsList"
 
 "params":{}
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -780,7 +809,9 @@ array
 "Apache 2.4 + PHP 8.0 Bitrix (Актуальная версия)"
 
 }
+```
 
+```json
 {
 
 "id":
@@ -792,7 +823,9 @@ array
 "Apache 2.4 + PHP 8.1 opcache (Актуальная версия)"
 
 }
+```
 
+```json
 {
 
 "id":
@@ -804,7 +837,9 @@ array
 "Apache 2.4 + PHP 8 opcache + mod\_wsgi python3.8 (Актуальная версия)"
 
 }
+```
 
+```json
 {
 
 "id":
@@ -816,7 +851,9 @@ array
 "Apache 2.4 + PHP 7.4 Bitrix (Актуальная версия)"
 
 }
+```
 
+```json
 {
 
 "id":
@@ -828,7 +865,9 @@ array
 "Apache 2.2 + mod\_passenger + mod\_wsgi (Актуальная версия)"
 
 }
+```
 
+```json
 {
 
 "id":
@@ -840,7 +879,9 @@ array
 "Apache 2.4 + PHP 7.4 opcache (Актуальная версия)"
 
 }
+```
 
+```json
 {
 
 "id":
@@ -852,7 +893,9 @@ array
 "Apache 2.2 + PHP 7.1 opcache (Актуальная версия)"
 
 }
+```
 
+```json
 {
 
 "id":
@@ -864,7 +907,9 @@ array
 "Apache 2.2 + PHP 7.3 (Актуальная версия)"
 
 }
+```
 
+```json
 {
 
 "id":
@@ -876,7 +921,9 @@ array
 "Apache 2.2 + PHP 7.2 (Актуальная версия)"
 
 }
+```
 
+```json
 {
 
 "id":
@@ -888,7 +935,9 @@ array
 "Apache 2.2 + PHP 7.1 (Актуальная версия)"
 
 }
+```
 
+```json
 {
 
 "id":
@@ -900,7 +949,9 @@ array
 "Apache 2.2 + PHP 7 (Актуальная версия)"
 
 }
+```
 
+```json
 {
 
 "id":
@@ -912,7 +963,9 @@ array
 "Apache 2.2 + PHP 5.6 (Актуальная версия)"
 
 }
+```
 
+```json
 {
 
 "id":
@@ -924,7 +977,9 @@ array
 "Apache 2.2 + PHP 5.5 (Стабильная версия)"
 
 }
+```
 
+```json
 {
 
 "id":
@@ -936,7 +991,9 @@ array
 "Apache 2.2 + PHP 5.4 (Стабильная версия)"
 
 }
+```
 
+```json
 {
 
 "id":
@@ -948,7 +1005,9 @@ array
 "Apache 2.2 + PHP 5.3 (Устаревшая версия)"
 
 }
+```
 
+```json
 {
 
 "id":
@@ -960,6 +1019,7 @@ array
 "Apache 2.2 + PHP 5.2 (Устаревшая версия)"
 
 }
+```
 
 \]
 
@@ -998,6 +1058,7 @@ integer
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -1019,11 +1080,13 @@ integer
 1
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -1039,3 +1102,4 @@ integer
 1
 
 }
+```

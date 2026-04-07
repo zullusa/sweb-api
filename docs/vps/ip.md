@@ -53,6 +53,7 @@ integer
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -70,11 +71,13 @@ integer
 "test\_vps\_1"
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -90,6 +93,7 @@ integer
 1
 
 }
+```
 
 removeLocal
 -----------
@@ -118,6 +122,7 @@ integer
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -135,11 +140,13 @@ integer
 "test\_vps\_1"
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -155,3 +162,4 @@ integer
 1
 
 }
+```

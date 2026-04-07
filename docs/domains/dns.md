@@ -85,6 +85,7 @@ array
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -102,11 +103,13 @@ array
 "test32132.ru"
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -154,7 +157,9 @@ array
 "zoneMain"
 
 }
+```
 
+```json
 {
 
 "name":
@@ -186,7 +191,9 @@ array
 "zoneMain"
 
 }
+```
 
+```json
 {
 
 "name":
@@ -210,7 +217,9 @@ array
 "subdom"
 
 }
+```
 
+```json
 {
 
 "name":
@@ -234,7 +243,9 @@ array
 "subdom"
 
 }
+```
 
+```json
 {
 
 "value":
@@ -262,7 +273,9 @@ array
 "MX"
 
 }
+```
 
+```json
 {
 
 "value":
@@ -290,7 +303,9 @@ array
 "MX"
 
 }
+```
 
+```json
 {
 
 "service":
@@ -338,7 +353,9 @@ array
 ""
 
 }
+```
 
+```json
 {
 
 "domain":
@@ -370,6 +387,7 @@ array
 "TXT"
 
 }
+```
 
 \]
 
@@ -377,6 +395,7 @@ array
 
 "protected\_ips":\[
 
+```json
 {
 
 "ip":
@@ -412,6 +431,7 @@ array
 50
 
 }
+```
 
 \]
 
@@ -419,7 +439,8 @@ array
 
 "local\_ip":\[\]
 
-"vps":{
+"vps":```json
+{
 
 "billingId":
 
@@ -438,6 +459,7 @@ NULL
 2
 
 }
+```
 
 }
 
@@ -500,6 +522,7 @@ integer
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -537,11 +560,13 @@ integer
 "teess11.ru.retesttt.ru"
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -557,6 +582,7 @@ integer
 1
 
 }
+```
 
 editSrv
 -------
@@ -645,6 +671,7 @@ boolean
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -702,11 +729,13 @@ boolean
 "teess11.ru.retesttt.ru"
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -722,6 +751,7 @@ boolean
 true
 
 }
+```
 
 editNS
 ------
@@ -774,6 +804,7 @@ boolean
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -807,11 +838,13 @@ boolean
 "111"
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -827,6 +860,7 @@ boolean
 true
 
 }
+```
 
 editTxt
 -------
@@ -879,6 +913,7 @@ boolean
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -912,11 +947,13 @@ boolean
 "111"
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -932,6 +969,7 @@ boolean
 true
 
 }
+```
 
 getFile
 -------
@@ -960,6 +998,7 @@ array
 
 пример запроса
 
+```json
 {
 
 "jsonrpc":
@@ -977,11 +1016,13 @@ array
 "test32132.ru"
 
 }
+```
 
 }
 
 пример ответа
 
+```json
 {
 
 "jsonrpc":
@@ -1009,5 +1050,6 @@ array
 "retesttt.ru.zone.txt"
 
 }
+```
 
 }
