@@ -39,7 +39,7 @@ class TestJSONRPCClient(unittest.TestCase):
         mock_post.return_value = mock_response
 
         client = JSONRPCClient("https://api.sweb.ru")
-        result = client.call("testMethod", {"param": "value"})
+        result = client.call("endpoint", "testMethod", {"param": "value"})
 
         self.assertEqual(result, {"status": "ok"})
         mock_post.assert_called_once()
@@ -56,7 +56,7 @@ class TestJSONRPCClient(unittest.TestCase):
 
         client = JSONRPCClient("https://api.sweb.ru")
         with self.assertRaises(AuthenticationError):
-            client.call("testMethod")
+            client.call("endpoint", "testMethod")
 
     @patch("sweb_api.http.client.requests.Session.post")
     def test_network_error_connection(self, mock_post):
@@ -65,7 +65,7 @@ class TestJSONRPCClient(unittest.TestCase):
 
         client = JSONRPCClient("https://api.sweb.ru")
         with self.assertRaises(NetworkError):
-            client.call("testMethod")
+            client.call("endpoint", "testMethod")
 
     @patch("sweb_api.http.client.requests.Session.post")
     def test_network_error_timeout(self, mock_post):
@@ -74,7 +74,7 @@ class TestJSONRPCClient(unittest.TestCase):
 
         client = JSONRPCClient("https://api.sweb.ru")
         with self.assertRaises(NetworkError):
-            client.call("testMethod")
+            client.call("endpoint", "testMethod")
 
     @patch("sweb_api.http.client.requests.Session.post")
     def test_invalid_json_response(self, mock_post):
@@ -85,7 +85,7 @@ class TestJSONRPCClient(unittest.TestCase):
 
         client = JSONRPCClient("https://api.sweb.ru")
         with self.assertRaises(InvalidResponseError):
-            client.call("testMethod")
+            client.call("endpoint", "testMethod")
 
     @patch("sweb_api.http.client.requests.Session.post")
     def test_custom_api_error(self, mock_post):
@@ -99,7 +99,7 @@ class TestJSONRPCClient(unittest.TestCase):
 
         client = JSONRPCClient("https://api.sweb.ru")
         with self.assertRaises(SwebAPIError) as context:
-            client.call("testMethod")
+            client.call("endpoint", "testMethod")
         self.assertEqual(context.exception.code, -32001)
         self.assertEqual(context.exception.message, "Custom error")
 
@@ -131,7 +131,7 @@ class TestBaseAPI(unittest.TestCase):
         api = BaseAPI(mock_client, "domains")
         result = api._call("getSubdomains", {"domain": "example.com"})
 
-        mock_client.call.assert_called_once_with("domains/getSubdomains", {"domain": "example.com"})
+        mock_client.call.assert_called_once_with("domains", "getSubdomains", {"domain": "example.com"})
         self.assertEqual(result, {"data": "test"})
 
     def test_index_call(self):
@@ -141,7 +141,7 @@ class TestBaseAPI(unittest.TestCase):
         api = BaseAPI(mock_client, "domains")
         result = api.index()
 
-        mock_client.call.assert_called_once_with("domains/index", None)
+        mock_client.call.assert_called_once_with("domains", "index", None)
 
 
 class TestSwebClientAuthentication(unittest.TestCase):
@@ -200,7 +200,7 @@ class TestDomainsAPI(unittest.TestCase):
         self.mock_client.call.return_value = [{"value": "www", "name": "www"}]
         result = self.domains.get_subdomains("example.com")
         self.mock_client.call.assert_called_once_with(
-            "domains/getSubdomains", {"domain": "example.com"}
+            "domains", "getSubdomains", {"domain": "example.com"}
         )
         self.assertEqual(result, [{"value": "www", "name": "www"}])
 
@@ -208,7 +208,7 @@ class TestDomainsAPI(unittest.TestCase):
         self.mock_client.call.return_value = {"fqdn": "example.com", "is_active_task": 0}
         result = self.domains.get_domain_info("example.com")
         self.mock_client.call.assert_called_once_with(
-            "domains/getDomainInfo", {"domain": "example.com"}
+            "domains", "getDomainInfo", {"domain": "example.com"}
         )
         self.assertEqual(result["fqdn"], "example.com")
 
@@ -221,7 +221,7 @@ class TestDomainsAPI(unittest.TestCase):
         self.mock_client.call.return_value = 1
         result = self.domains.reg_available("example.com", "bonus")
         self.mock_client.call.assert_called_once_with(
-            "domains/regAvailable", {"domain": "example.com", "payType": "bonus"}
+            "domains", "regAvailable", {"domain": "example.com", "payType": "bonus"}
         )
 
     def test_reg_with_all_params(self):
@@ -237,25 +237,26 @@ class TestDomainsAPI(unittest.TestCase):
         )
         self.mock_client.call.assert_called_once()
         call_args = self.mock_client.call.call_args
-        self.assertEqual(call_args[0][0], "domains/reg")
-        self.assertEqual(call_args[0][1]["domain"], "example.com")
-        self.assertEqual(call_args[0][1]["domPerson"], 12345)
-        self.assertEqual(call_args[0][1]["prolongType"], "bonus_money")
-        self.assertEqual(call_args[0][1]["autoReg"], 1)
-        self.assertEqual(call_args[0][1]["dir"], "/test")
-        self.assertEqual(call_args[0][1]["idShield"], True)
+        self.assertEqual(call_args[0][0], "domains")
+        self.assertEqual(call_args[0][1], "reg")
+        self.assertEqual(call_args[0][2]["domain"], "example.com")
+        self.assertEqual(call_args[0][2]["domPerson"], 12345)
+        self.assertEqual(call_args[0][2]["prolongType"], "bonus_money")
+        self.assertEqual(call_args[0][2]["autoReg"], 1)
+        self.assertEqual(call_args[0][2]["dir"], "/test")
+        self.assertEqual(call_args[0][2]["idShield"], True)
 
     def test_move_with_minimal_params(self):
         self.mock_client.call.return_value = 1
         result = self.domains.move("example.com")
         self.mock_client.call.assert_called_once_with(
-            "domains/move", {"domain": "example.com"}
+            "domains", "move", {"domain": "example.com"}
         )
 
     def test_move_with_optional_params(self):
         self.mock_client.call.return_value = 1
         result = self.domains.move("example.com", prolong_type="manual", dir="/new")
-        call_args = self.mock_client.call.call_args[0][1]
+        call_args = self.mock_client.call.call_args[0][2]
         self.assertEqual(call_args["domain"], "example.com")
         self.assertEqual(call_args["prolongType"], "manual")
         self.assertEqual(call_args["dir"], "/new")
@@ -264,21 +265,21 @@ class TestDomainsAPI(unittest.TestCase):
         self.mock_client.call.return_value = 1
         result = self.domains.change_prolong("example.com", "bonus_money")
         self.mock_client.call.assert_called_once_with(
-            "domains/changeProlong", {"domain": "example.com", "prolongType": "bonus_money"}
+            "domains", "changeProlong", {"domain": "example.com", "prolongType": "bonus_money"}
         )
 
     def test_remove_subdomain(self):
         self.mock_client.call.return_value = 1
         result = self.domains.remove_subdomain("example.com", "www")
         self.mock_client.call.assert_called_once_with(
-            "domains/removeSubdomain", {"domain": "example.com", "machine": "www"}
+            "domains", "removeSubdomain", {"domain": "example.com", "machine": "www"}
         )
 
     def test_create_subdomain(self):
         self.mock_client.call.return_value = 1
         result = self.domains.create_subdomain("example.com", "test", "/testdir")
         self.mock_client.call.assert_called_once_with(
-            "domains/createSubdomain", {"domain": "example.com", "machine": "test", "dir": "/testdir"}
+            "domains", "createSubdomain", {"domain": "example.com", "machine": "test", "dir": "/testdir"}
         )
 
 
@@ -329,7 +330,7 @@ class TestMailAPI(unittest.TestCase):
             "webMail": "https://webmail.sweb.ru"
         }
         result = self.mail.create_mbox("example.com", "test", "password123")
-        call_args = self.mock_client.call.call_args[0][1]
+        call_args = self.mock_client.call.call_args[0][2]
         self.assertEqual(call_args["domain"], "example.com")
         self.assertEqual(call_args["mbox"], "test")
         self.assertEqual(call_args["password"], "password123")
@@ -337,35 +338,35 @@ class TestMailAPI(unittest.TestCase):
     def test_create_mbox_with_comment(self):
         self.mock_client.call.return_value = {"login": "test@example.com"}
         result = self.mail.create_mbox("example.com", "test", "pass", comment="Test mailbox")
-        call_args = self.mock_client.call.call_args[0][1]
+        call_args = self.mock_client.call.call_args[0][2]
         self.assertEqual(call_args["comment"], "Test mailbox")
 
     def test_get_autoreply(self):
         self.mock_client.call.return_value = "Out of office message"
         result = self.mail.get_autoreply("example.com", "test")
         self.mock_client.call.assert_called_once_with(
-            "vh/mail/getAutoreply", {"domain": "example.com", "mbox": "test"}
+            "vh/mail", "getAutoreply", {"domain": "example.com", "mbox": "test"}
         )
         self.assertEqual(result, "Out of office message")
 
     def test_change_mailbox_password(self):
         self.mock_client.call.return_value = 1
         result = self.mail.change_mailbox_password("example.com", "test", "newpassword")
-        call_args = self.mock_client.call.call_args[0][1]
+        call_args = self.mock_client.call.call_args[0][2]
         self.assertEqual(call_args["password"], "newpassword")
 
     def test_enable_dkim(self):
         self.mock_client.call.return_value = 1
         result = self.mail.enable_dkim("example.com")
         self.mock_client.call.assert_called_once_with(
-            "vh/mail/enableDkim", {"domain": "example.com"}
+            "vh/mail", "enableDkim", {"domain": "example.com"}
         )
 
     def test_disable_dkim(self):
         self.mock_client.call.return_value = 1
         result = self.mail.disable_dkim("example.com")
         self.mock_client.call.assert_called_once_with(
-            "vh/mail/disableDkim", {"domain": "example.com"}
+            "vh/mail", "disableDkim", {"domain": "example.com"}
         )
 
 
@@ -379,21 +380,21 @@ class TestVPSAPI(unittest.TestCase):
         self.mock_client.call.return_value = 1
         result = self.vps.power_on("test_vps_1")
         self.mock_client.call.assert_called_once_with(
-            "vps/powerOn", {"billingId": "test_vps_1"}
+            "vps", "powerOn", {"billingId": "test_vps_1"}
         )
 
     def test_power_off(self):
         self.mock_client.call.return_value = 1
         result = self.vps.power_off("test_vps_1")
         self.mock_client.call.assert_called_once_with(
-            "vps/powerOff", {"billingId": "test_vps_1"}
+            "vps", "powerOff", {"billingId": "test_vps_1"}
         )
 
     def test_reboot(self):
         self.mock_client.call.return_value = 1
         result = self.vps.reboot("test_vps_1")
         self.mock_client.call.assert_called_once_with(
-            "vps/reboot", {"billingId": "test_vps_1"}
+            "vps", "reboot", {"billingId": "test_vps_1"}
         )
 
     def test_is_running(self):
@@ -405,13 +406,13 @@ class TestVPSAPI(unittest.TestCase):
         self.mock_client.call.return_value = 1
         result = self.vps.remove("test_vps_1")
         self.mock_client.call.assert_called_once_with(
-            "vps/remove", {"billingId": "test_vps_1"}
+            "vps", "remove", {"billingId": "test_vps_1"}
         )
 
     def test_reinstall_os(self):
         self.mock_client.call.return_value = 1
         result = self.vps.reinstall_os("test_vps_1", 102, save_disk=True)
-        call_args = self.mock_client.call.call_args[0][1]
+        call_args = self.mock_client.call.call_args[0][2]
         self.assertEqual(call_args["os_distr_id"], 102)
         self.assertEqual(call_args["save_disk"], True)
 
@@ -481,7 +482,7 @@ class TestEdgeCases(unittest.TestCase):
 
         mock_client.call.return_value = 1
         domains.reg("тест.рф", dir="/тестовая-директория")
-        call_args = mock_client.call.call_args[0][1]
+        call_args = mock_client.call.call_args[0][2]
         self.assertEqual(call_args["domain"], "тест.рф")
         self.assertEqual(call_args["dir"], "/тестовая-директория")
 
@@ -529,7 +530,7 @@ class TestDiskUsageAPI(unittest.TestCase):
         self.mock_client.call.return_value = 1
         result = self.disk.change_email("new@example.com")
         self.mock_client.call.assert_called_once_with(
-            "vh/utils/diskUsage/changeEmail", {"email": "new@example.com"}
+            "vh/utils/diskUsage", "changeEmail", {"email": "new@example.com"}
         )
 
 
